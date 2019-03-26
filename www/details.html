@@ -3,7 +3,7 @@
 <div id="details">
 <div class="row responsive-lg" style="flex-wrap: wrap">
 <div class="col col-33">
-<img src="img/{{data.image}}" class="full-image image-extended"/> 
+<img src="{{data.image}}" class="full-image image-extended"/>
 </div>
 <div class="col col-67">
 <div class="padding" style="padding-top: 0">
@@ -14,10 +14,10 @@
     <i class="icon ion-android-star"></i> {{data.dificult}}&nbsp;<br/>
   </h5>
 </div>
-  
+
 <div class="default-div">
       <a class="item item-avatar" href="#/tab/profile/{{data.chef}}" style="min-height: 52px;padding-bottom: 25px;">
-      <img src="img/{{data.avatar}}">
+      <img src="{{data.avatar}}">
       <h2>By {{data.chef_name}}</h2>
       <span class="badge badge-assertive">View Profile</span>
     </a>
@@ -59,9 +59,9 @@ Preparation
  </div>
 
 <div class="row" style="flex-wrap: wrap;">
-    <div class="col col-res-50" ng-repeat="item in recipes | limitTo: 7"> 
+    <div class="col col-res-50" ng-repeat="item in recipes | limitTo: 7">
         <a class="item item-thumbnail-left item-light" href="#/tab/details/{{item.id}}">
-      <img src="img/{{item.image}}">
+      <img src="{{item.image}}">
       <h2>{{item.title}}</h2>
       <p>
         <i class="icon ion-android-notifications"></i> {{item.time_r}} Min &nbsp;

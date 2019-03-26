@@ -204,7 +204,7 @@ $urlRouterProvider.otherwise('/tab/home');})
 
 
 .controller('RecetasCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
-    $http.get('http://api.wcode-agency.com/recipes.json')
+    $http.get('http://samira_food.wcode-agency.com/json_recipes.json')
   .success(function(data){
     $scope.recipes = data.recipes;
     $scope.data = data.recipes[$state.params.id];
@@ -214,7 +214,7 @@ $urlRouterProvider.otherwise('/tab/home');})
 
 //Category-recipes and categories Controllers :
 .controller('CategoriesCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
-  $http.get('http://api.wcode-agency.com/recipes.json')
+  $http.get('http://samira_food.wcode-agency.com/json_recipes.json')
   .success(function(data){
     $scope.recipes = data.recipes;
   });
@@ -223,14 +223,14 @@ $urlRouterProvider.otherwise('/tab/home');})
 
 .controller('CategoryCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
  $scope.params = $state.params ;
-  $http.get('http://api.wcode-agency.com/recipes.json')
+  $http.get('http://samira_food.wcode-agency.com/json_recipes.json')
   .success(function(data){
     $scope.recipes = data.recipes;
     //$scope.data = data.recipes[$state.category];
 
     });
 
-  $http.get('http://api.wcode-agency.com/categories.json')
+  $http.get('http://samira_food.wcode-agency.com/json_categories.json')
   .success(function(data){
     $scope.data = data.categories[$state.params.id];
     $scope.categories = data.categories;
@@ -248,7 +248,7 @@ $urlRouterProvider.otherwise('/tab/home');})
 }] )
 .controller('VideoCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
  $scope.params = $state.params ;
-  $http.get('http://api.wcode-agency.com/recipes.json')
+  $http.get('http://samira_food.wcode-agency.com/json_recipes.json')
   .success(function(data){
     $scope.recipes = data.recipes;
     //$scope.data = data.recipes[$state.category];
@@ -264,7 +264,7 @@ $urlRouterProvider.otherwise('/tab/home');})
 
 
 .controller('ChefsCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
-  $http.get('http://api.wcode-agency.com/recipes.json')
+  $http.get('http://samira_food.wcode-agency.com/json_recipes.json')
   .success(function(data){
     $scope.recipes = data.recipes;
   });
@@ -274,7 +274,7 @@ $urlRouterProvider.otherwise('/tab/home');})
 .controller('ChefCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
 
   $scope.params = $state.params ;
-  $http.get('http://api.wcode-agency.com/recipes.json')
+  $http.get('http://samira_food.wcode-agency.com/json_recipes.json')
   .success(function(data){
     $scope.recipes = data.recipes;
     //$scope.data = data.recipes[$state.chef];
@@ -290,7 +290,7 @@ $urlRouterProvider.otherwise('/tab/home');})
 }])
 
 .controller('DetailsCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
-  $http.get('http://api.wcode-agency.com/recipes.json')
+  $http.get('http://samira_food.wcode-agency.com/json_recipes.json')
   .success(function(data){
     $scope.data = data.recipes[$state.params.id];
     $scope.recipes = data.recipes;
@@ -304,7 +304,7 @@ $urlRouterProvider.otherwise('/tab/home');})
   }])
 
   .controller('SearchCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
-  $http.get('http://api.wcode-agency.com/recipes.json')
+  $http.get('http://samira_food.wcode-agency.com/json_recipes.json')
   .success(function(data){
     $scope.data = data.recipes[$state.params.id];
     $scope.recipes = data.recipes;

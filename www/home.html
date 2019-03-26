@@ -4,7 +4,7 @@
 <ion-slide-box does-continue="true">
 <ion-slide ng-repeat="item in recipes | limitTo: 10">
 
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('img/{{item.image}}');">
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('{{item.image}}');">
 <div class="card-category">BY {{item.chef_name}}</div>
 <div class="card-description">
   <h2>{{item.title}}</h2>
@@ -13,7 +13,7 @@
   <i class="icon ion-android-people"></i> {{item.servings}} Servings&nbsp;
   <i class="icon ion-android-star"></i> {{item.dificult}}<br/></p></p>
 </div>
-<img class="card-user avatar" src="img/{{item.avatar}}">
+<img class="card-user avatar" src="{{item.avatar}}">
 <a class="card-link" href="#/tab/details/{{item.id}}" ></a>
 </div>
 
@@ -27,9 +27,9 @@ Recommended for you
 
 
 <div class="row" style="flex-wrap: wrap;">
-    <div class="col col-res-50" ng-repeat="item in recipes | limitTo: 10"> 
+    <div class="col col-res-50" ng-repeat="item in recipes | limitTo: 10">
         <a class="item item-thumbnail-left item-light" href="#/tab/details/{{item.id}}">
-      <img src="img/{{item.image}}">
+      <img src="{{item.image}}">
       <h2>{{item.title}}</h2>
       <p>
         <i class="icon ion-android-notifications"></i> {{item.time_r}} Min &nbsp;
