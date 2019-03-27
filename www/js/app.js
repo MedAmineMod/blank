@@ -1,7 +1,5 @@
 angular.module('starter', ['ionic'])
 
-
-var islogged;
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
@@ -12,7 +10,7 @@ var islogged;
       StatusBar.styleDefault();
     }
 
-
+var islogged;
 var admobid = {};
 
 // TODO: replace the following ad units with your own
