@@ -11,9 +11,9 @@
 </div>
 
 <div class="row" style="flex-wrap: wrap;">
-    <div class="col col-res-50" ng-repeat="item in recipes | filter: query"> 
+    <div class="col col-res-50" ng-repeat="item in recipes | filter: query">
         <a class="item item-thumbnail-left item-light" href="#/tab/details/{{item.id}}">
-      <img src="img/{{item.image}}">
+      <img src="{{item.image}}">
       <h2>{{item.title}}</h2>
       <p>
   <i class="icon ion-android-notifications"></i> {{item.time_r}} Min &nbsp;
