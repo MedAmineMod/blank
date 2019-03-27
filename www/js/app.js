@@ -1,5 +1,7 @@
 angular.module('starter', ['ionic'])
 
+
+var islogged;
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
@@ -314,7 +316,7 @@ $urlRouterProvider.otherwise('/tab/home');})
   .success(function(data){
     $scope.chefs = data.chefs;
   });
-
+ 
 }])
 
 .controller('aboutCtrl', function($scope, $state, $http) {
@@ -324,8 +326,15 @@ $urlRouterProvider.otherwise('/tab/home');})
   $scope.doLogin = function() {
     //console.log($scope.loginData);
     $http.post("http://samira_food.wcode-agency.com/test_login",($scope.loginData),{headers: {'Content-Type': 'multipart/form-data'}})
+      .success(function(data){
+        console.log(data);
+      });
+    };
+  $scope.doLogin = function() {
+      //console.log($scope.loginData);
+  $http.post("http://samira_food.wcode-agency.com/test_login",($scope.loginData),{headers: {'Content-Type': 'multipart/form-data'}})
     .success(function(data){
       console.log(data);
     });
-    };
+  };
 })
