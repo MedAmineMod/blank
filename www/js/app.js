@@ -1,4 +1,4 @@
-angular.module('starter', ['ionic'])
+angular.module('starter', ['ionic','app.side1_app','app.side2_app'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -10,7 +10,7 @@ angular.module('starter', ['ionic'])
       StatusBar.styleDefault();
     }
 
-
+var islogged;
 var admobid = {};
 
 // TODO: replace the following ad units with your own
@@ -111,7 +111,7 @@ $stateProvider
         views: {
           'tab-about': {
             templateUrl: 'about.html',
-            controller: 'RecetasCtrl'
+            controller: 'aboutCtrl'
           }
         }
       })
@@ -328,5 +328,6 @@ $urlRouterProvider.otherwise('/tab/home');})
   .success(function(data){
     $scope.chefs = data.chefs;
   });
-
+ // helloooooooooo
+ // branch
 }])
