@@ -1,6 +1,59 @@
-<ion-view view-title="About">
-<ion-content has-bouncing="false" class="padding">
+<ion-view title="Sign Up">
+    <ion-content padding="true" class="has-header">
 
+      <br>
+      <br>
+
+      <form ng-submit="doLogin()" enctype="multipart/form-data">
+       <div class="list">
+         <label class="item item-input">
+           <span class="input-label">email</span>
+           <input type="text" ng-model="loginData.email">
+         </label>
+         <label class="item item-input">
+           <span class="input-label">Password</span>
+           <input type="password" ng-model="loginData.reg_password">
+         </label>
+         <br>
+         <label class="item">
+           <button class="button button-block button-positive" type="submit">login</button>
+         </label>
+       </div>
+      </form>
+
+      <br>
+      <br>
+
+      <form ng-submit="doLogin()" enctype="multipart/form-data">
+       <div class="list">
+         <label class="item item-input">
+           <span class="input-label">firstname</span>
+           <input type="text" ng-model="loginData.reg_firstname">
+         </label>
+         <label class="item item-input">
+           <span class="input-label">lastname</span>
+           <input type="text" ng-model="loginData.reg_lastname">
+         </label>
+         <label class="item item-input">
+           <span class="input-label">email</span>
+           <input type="text" ng-model="loginData.reg_email">
+         </label>
+         <label class="item item-input">
+           <span class="input-label">Password</span>
+           <input type="password" ng-model="loginData.reg_password">
+         </label>
+         <br>
+
+         <label class="item">
+           <button class="button button-block button-positive" type="submit">sign in</button>
+         </label>
+       </div>
+     </form>
+
+
+
+<br>
+<br>
 <div class="text-center" style="text-align: center;">
 
 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
@@ -9,13 +62,15 @@
 
 <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 
-  </div>
-  <br/>
-        <div class="text-center">
-            <h4 class="assertive" style="text-align: center;"><b>
-            Follow us on
-            </b></h4>
-        </div>
+</div>
+<br/>
+      <div class="text-center">
+          <h4 class="assertive" style="text-align: center;"><b>
+          Follow us on
+          </b></h4>
+      </div>
+
+
 
 <div class="button-bar padding">
 
@@ -25,6 +80,5 @@
 <a href="#" onclick="window.open('http://www.instagram.com/', '_system', 'location=yes'); return false;" target="_blank" class="button button-outline button-assertive icon ion-social-instagram"></a>
 </div>
 
-
-</ion-content>
+  </ion-content>
 </ion-view>
