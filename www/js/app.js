@@ -63,14 +63,15 @@ if(( /(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent) )) {
 $ionicConfigProvider.tabs.position("top");
 $ionicConfigProvider.navBar.alignTitle("center");
 
+// console.log($stateProvider.state);
 $stateProvider
 
-      .state('tab-bottom', {
-       url: '/tab-bottom',
-       abstract: true,
-       templateUrl: 'tab-bottom.html'
-      })
-      .state('tab-bottom.videos', {
+      // .state('tab-bottom', {
+      //  url: '/tab-bottom',
+      //  abstract: true,
+      //  templateUrl: 'tab-bottom.html'
+      // })
+      .state('tab.videos', {
         url: '/videos',
         views: {
           'tab-videos': {
@@ -79,7 +80,7 @@ $stateProvider
           }
         }
       })
-      .state('tab-bottom.video', {
+      .state('tab.video', {
         url: '/video/:video',
         views: {
           'tab-video': {
