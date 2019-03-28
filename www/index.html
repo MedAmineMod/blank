@@ -19,37 +19,25 @@
   <body ng-app="starter">
 
     <ion-nav-bar class="bar bar-assertive" align-title="center">
-
-  <ion-nav-buttons side="left">
-
+      <ion-nav-buttons side="left">
           <a class="button button-icon icon ion-ios-arrow-thin-left" href="#/tab/home"></a>
-
       </ion-nav-buttons>
-
       <ion-nav-buttons side="right">
-
           <a class="button button-icon icon ion-ios-help-empty" href="#/tab/about"></a>
-
       </ion-nav-buttons>
-
   </ion-nav-bar>
-    <ion-nav-view>
-    </ion-nav-view>
 
-    <script type="text/javascript">
+  <ion-nav-view>
+  </ion-nav-view>
 
-     // $.ajax("http://api.wcode-agency.com/recipes.json").done(function(result){
-     //   var json = result;
-     //   obj = JSON.parse(json);
-     //
-     //   console.log(obj.recipes);
-     //   });
+    <div class="bar bar-footer bar-assertive">
+      <a class="button button-clear" href="#/tab/videos">
+        <ion-icon name="videocam"></ion-icon>
+        videos</a>
+      <a class="button button-clear" href="#/tab/home">Right</a>
+    </div>
 
-
-       // expected output: 42
-
-       // expected output: true
-   </script>
+    <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
 
   </body>
 </html>

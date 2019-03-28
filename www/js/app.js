@@ -63,7 +63,33 @@ if(( /(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent) )) {
 $ionicConfigProvider.tabs.position("top");
 $ionicConfigProvider.navBar.alignTitle("center");
 
+// console.log($stateProvider.state);
 $stateProvider
+
+      // .state('tab-bottom', {
+      //  url: '/tab-bottom',
+      //  abstract: true,
+      //  templateUrl: 'tab-bottom.html'
+      // })
+      .state('tab.videos', {
+        url: '/videos',
+        views: {
+          'tab-videos': {
+            templateUrl: 'videos.html',
+            controller: 'VideosCtrl'
+          }
+        }
+      })
+      .state('tab.video', {
+        url: '/video/:video',
+        views: {
+          'tab-video': {
+            templateUrl: 'video.html',
+            controller: 'VideoCtrl'
+          }
+        }
+      })
+      //Videos and and video State  router and sriwriwrate
 
      .state('tab', {
       url: '/tab',
@@ -132,25 +158,7 @@ $stateProvider
       })
 //Categorie and categories router and sriwriwrate
 //Videos and and video State  router and sriwriwrate
-.state('tab.videos', {
-  url: '/videos',
-  views: {
-    'tab-videos': {
-      templateUrl: 'videos.html',
-      controller: 'VideosCtrl'
-    }
-  }
-})
-.state('tab.video', {
-  url: '/video/:video',
-  views: {
-    'tab-video': {
-      templateUrl: 'video.html',
-      controller: 'VideoCtrl'
-    }
-  }
-})
-//Videos and and video State  router and sriwriwrate
+
 
 
     .state('tab.chefs', {
@@ -292,7 +300,14 @@ $urlRouterProvider.otherwise('/tab/home');})
 .controller('DetailsCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
   $http.get('http://samira_food.wcode-agency.com/json_recipes.json')
   .success(function(data){
-    $scope.data = data.recipes[$state.params.id];
+
+    for (var i = 0; i < data.recipes.length; i++) {
+    console.log(  data.recipes[i].id);
+    if ($state.params.id == data.recipes[i].id ) {
+        $scope.data = data.recipes[i];
+    }
+    }
+    console.log(data.recipes);
     $scope.recipes = data.recipes;
   });
 
