@@ -9,16 +9,20 @@
   </label>
 </div>
 </div>
-
+<div class="padding" style="border : 1px solid grey ">
+  lsknsldknsdlkvns
+</div>
 <div class="row" style="flex-wrap: wrap;">
     <div class="col col-res-50" ng-repeat="item in recipes | filter: query">
         <a class="item item-thumbnail-left item-light" href="#/tab/details/{{item.id}}">
       <img src="{{item.image}}">
       <h2>{{item.title}}</h2>
       <p>
-  <i class="icon ion-android-notifications"></i> {{item.time_r}} Min &nbsp;
-  <i class="icon ion-android-people"></i> {{item.servings}} Servings&nbsp;
-  <i class="icon ion-android-star"></i> {{item.dificult}}<br/></p></p>
+  <i class="icon ion-android-notifications"></i> &nbsp; {{item.time_r}} Min <br/>
+  <i class="icon ion-android-people"></i> &nbsp; {{item.servings}} Servings <br/>
+  <i class="icon ion-android-star"></i> &nbsp; {{item.dificult}}<br/>
+    </p>
+
     </a>
     </div>
     </div>

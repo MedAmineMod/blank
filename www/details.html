@@ -9,9 +9,9 @@
 <div class="padding" style="padding-top: 0">
 <h3>{{data.title}}</h3>
   <h5 class="red-color">
-    <i class="icon ion-android-notifications"></i> {{data.time_r}} Min &nbsp;
-    <i class="icon ion-android-people"></i> {{data.servings}} Servings&nbsp;
-    <i class="icon ion-android-star"></i> {{data.dificult}}&nbsp;<br/>
+    <i class="icon ion-android-notifications"></i>&nbsp  {{data.time_r}} Min <br/>
+    <i class="icon ion-android-people"></i> &nbsp{{data.servings}} Servings<br/>
+    <i class="icon ion-android-star"></i> &nbsp{{data.dificult}}&nbsp;<br/>
   </h5>
 </div>
 
@@ -25,7 +25,7 @@
 
   <div class="item item-icon-left assertive">
   <i class="icon ion-clipboard"></i>
-Description
+  Description
   </div>
 <p ng-bind-html="data.description" class="padding" style="padding-top: 0"></p>
 </div>
@@ -47,10 +47,17 @@ Ingredients
   <i class="icon ion-android-restaurant"></i>
 Preparation
   </div>
-
   <p ng-bind-html="data.preparation" class="padding"></p>
 
+  <div class="item item-icon-left assertive">
+  <i class="icon ion-play"></i>
+Recipe video :
 
+<!-- {{data.video_link}} -->
+  </div>
+  <div class="video-container">
+    <iframe class="youtube-player" type="text/html"  ng-src="{{trustSrc(movie.src)}}" allowfullscreen frameborder="0">
+  </div>
   <div class="item item-icon-left assertive">
   <i class="icon ion-heart"></i>
   You might also like

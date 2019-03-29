@@ -280,7 +280,6 @@ $urlRouterProvider.otherwise('/tab/home');})
 }])
 
 .controller('ChefCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
-
   $scope.params = $state.params ;
   $http.get('http://samira_food.wcode-agency.com/json_recipes.json')
   .success(function(data){
@@ -297,18 +296,24 @@ $urlRouterProvider.otherwise('/tab/home');})
 
 }])
 
-.controller('DetailsCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
+.controller('DetailsCtrl', ['$scope', '$http', '$state' ,  '$sce', function($scope, $http, $state , $sce) {
   $http.get('http://samira_food.wcode-agency.com/json_recipes.json')
   .success(function(data){
 
     for (var i = 0; i < data.recipes.length; i++) {
     console.log(  data.recipes[i].id);
+
     if ($state.params.id == data.recipes[i].id ) {
         $scope.data = data.recipes[i];
+        $scope.trustSrc = function(src) {
+       return $sce.trustAsResourceUrl(src);
+        }
+        $scope.movie = {src:""+ data.recipes[i].video_link +"", title:"Egghead.io AngularJS Binding"};
     }
     }
-    console.log(data.recipes);
+    // console.log(data.recipes);
     $scope.recipes = data.recipes;
+    //video in detailsComponent
   });
 
   $http.get('http://samira_food.wcode-agency.com/json_chefs.json')
