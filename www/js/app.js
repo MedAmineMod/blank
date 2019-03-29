@@ -13,6 +13,7 @@ angular.module('starter', ['ionic','app.side1_app','app.side2_app'])
 var islogged;
 var admobid = {};
 
+
 // TODO: replace the following ad units with your own
 if( /(android)/i.test(navigator.userAgent) ) {
   admobid = { // for Android
