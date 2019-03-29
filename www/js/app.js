@@ -306,6 +306,7 @@ $urlRouterProvider.otherwise('/tab/home');})
     if ($state.params.id == data.recipes[i].id ) {
         $scope.data = data.recipes[i];
         $scope.trustSrc = function(src) {
+          
        return $sce.trustAsResourceUrl(src);
         }
         $scope.movie = {src:""+ data.recipes[i].video_link +"", title:"Egghead.io AngularJS Binding"};
