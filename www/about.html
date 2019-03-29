@@ -1,10 +1,10 @@
-<ion-view title="Sign Up">
+<ion-view title="Sign Up ">
     <ion-content padding="true" class="has-header">
 
       <br>
       <br>
 
-      <form ng-submit="doLogin()" enctype="multipart/form-data">
+      <form ng-submit="doLogin()" enctype="multipart/form-data" ng-show="showloginlink">
        <div class="list">
          <label class="item item-input">
            <span class="input-label">email</span>
@@ -12,7 +12,7 @@
          </label>
          <label class="item item-input">
            <span class="input-label">Password</span>
-           <input type="password" ng-model="loginData.reg_password">
+           <input type="password" ng-model="loginData.password">
          </label>
          <br>
          <label class="item">
@@ -24,23 +24,26 @@
       <br>
       <br>
 
-      <form ng-submit="doLogin()" enctype="multipart/form-data">
+<div class="" ng-repeat="item in user">
+  {{user.firstname}}
+</div>
+      <form ng-submit="doRegister()" enctype="multipart/form-data" ng-show="showRloginlink">
        <div class="list">
          <label class="item item-input">
            <span class="input-label">firstname</span>
-           <input type="text" ng-model="loginData.reg_firstname">
+           <input type="text" ng-model="registerData.reg_firstname">
          </label>
          <label class="item item-input">
            <span class="input-label">lastname</span>
-           <input type="text" ng-model="loginData.reg_lastname">
+           <input type="text" ng-model="registerData.reg_lastname">
          </label>
          <label class="item item-input">
            <span class="input-label">email</span>
-           <input type="text" ng-model="loginData.reg_email">
+           <input type="text" ng-model="registerData.reg_email">
          </label>
          <label class="item item-input">
            <span class="input-label">Password</span>
-           <input type="password" ng-model="loginData.reg_password">
+           <input type="password" ng-model="registerData.reg_password">
          </label>
          <br>
 
@@ -50,6 +53,14 @@
        </div>
      </form>
 
+
+     <form ng-submit="doLogout()" ng-show="showlogout">
+      <div class="list">
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Logout</button>
+        </label>
+      </div>
+     </form>
 
 
 <br>
