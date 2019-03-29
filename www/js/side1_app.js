@@ -38,7 +38,7 @@ angular.module('app.side1_app', ['ionic'])
         $scope.showloginlink=false;
         $scope.showRloginlink=false;
         $scope.showlogout=true;
-        $scope.user = data.user;
+        $scope.user = data.user; 
         console.log($scope.user);
         $state.go('tab.home');
       }else {
