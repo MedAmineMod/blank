@@ -15,6 +15,35 @@
   </h5>
 </div>
 
+<!--  save + favorite + rating   -->
+
+
+
+<div class = "row">
+   <div class = "col">
+     <button class="button button-stable">
+       <ion-icon name="save"></ion-icon>
+    </button>
+  </div>
+  <div class = "col">
+    <button class="button button-stable">
+      <ion-icon name="heart"></ion-icon>
+    </button>
+  </div>
+  <div class="col">
+    <div class="row">
+      <div class="col"><ion-icon name="star"></ion-icon></div>
+      <div class="col"><ion-icon name="star"></ion-icon></div>
+      <div class="col"><ion-icon name="star"></ion-icon></div>
+      <div class="col"><ion-icon name="star-half"></ion-icon></div>
+      <div class="col"><ion-icon name="star-outline"></ion-icon></div>
+    </div>
+  </div>
+</div>
+
+<!--  save + favorite + rating   -->
+
+
 <div class="default-div">
       <a class="item item-avatar" href="#/tab/profile/{{data.chef}}" style="min-height: 52px;padding-bottom: 25px;">
       <img src="{{data.avatar}}">
@@ -29,6 +58,8 @@ Description
   </div>
 <p ng-bind-html="data.description" class="padding" style="padding-top: 0"></p>
 </div>
+
+
 
 </div>
 </div>

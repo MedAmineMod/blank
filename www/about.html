@@ -25,8 +25,12 @@
       <br>
 
 <div class="" ng-repeat="item in user">
-  {{user.firstname}}
+  {{item.firstname}}
+  {{item.lastname}}
 </div>
+
+
+
       <form ng-submit="doRegister()" enctype="multipart/form-data" ng-show="showRloginlink">
        <div class="list">
          <label class="item item-input">
