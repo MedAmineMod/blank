@@ -211,6 +211,17 @@ $urlRouterProvider.otherwise('/tab/home');})
    };
 })
 
+.factory('myService', function(){
+  var userinfos = null;//the object to hold our data
+   return {
+   getJson:function(){
+     return userinfos;
+   },
+   setJson:function(value){
+    userinfos = value;
+   }
+   }
+})
 
 .controller('RecetasCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
     $http.get('http://samira_food.wcode-agency.com/json_recipes.json')
@@ -298,14 +309,23 @@ $urlRouterProvider.otherwise('/tab/home');})
 
 }])
 
-.controller('DetailsCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
+.controller('DetailsCtrl', ['$scope', '$http', '$state', 'myService', function($scope, $http, $state, myService) {
+
   $http.get('http://samira_food.wcode-agency.com/json_recipes.json')
   .success(function(data){
+    $scope.myuserinfos = myService.getJson();
 
     for (var i = 0; i < data.recipes.length; i++) {
     console.log(  data.recipes[i].id);
     if ($state.params.id == data.recipes[i].id ) {
         $scope.data = data.recipes[i];
+
+        $http.post("http://samira_food.wcode-agency.com/test_post",(['getsaverecipe',$scope.myuserinfos,$state.params.id]),{headers: {'Content-Type': 'multipart/form-data'}})
+          .success(function(data){
+            console.log(data);
+            $scope.saveclr = data.clr;
+            $scope.disbtn = data.disable;
+        });
     }
     }
     console.log(data.recipes);
@@ -317,6 +337,17 @@ $urlRouterProvider.otherwise('/tab/home');})
     $scope.chefs = data.chefs;
   });
 
+
+
+
+  $scope.saveR = function(recipe) {
+    //console.log($scope.loginData);
+    //console.log(recipe);
+    $http.post("http://samira_food.wcode-agency.com/test_post",(['saverecipe',$scope.myuserinfos,recipe]),{headers: {'Content-Type': 'multipart/form-data'}})
+      .success(function(data){
+        console.log(data);
+    });
+  };
   }])
 
   .controller('SearchCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
