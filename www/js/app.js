@@ -1,5 +1,32 @@
 angular.module('starter', ['ionic','app.side2_app'])
 
+.filter("FilterbyAll", function(){
+
+  return function(users, postDate){
+
+       var addUser;
+       var selectedUsers = [];
+       console.log(postDate);
+       if (postDate == 0) {
+         postDate = 2000;
+       }
+       for(i=0;i<users.length;i++){
+           addUser = false;
+           if (parseInt(users[i].totalminutes) <= postDate){
+             console.log(users[i].totalminutes);
+                addUser = true;
+               if (addUser){
+                   selectedUsers.push(users[i]);
+               }
+
+           }
+
+   }
+       return selectedUsers;
+   };
+
+})
+
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
@@ -324,7 +351,7 @@ $urlRouterProvider.otherwise('/tab/home');})
 
   }])
 
-  .controller('SearchCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
+  .controller('SearchCtrl', ['$scope', '$http' , '$state', function($scope, $http, $state) {
   $http.get('http://samira_food.wcode-agency.com/json_recipes.json')
   .success(function(data){
     $scope.data = data.recipes[$state.params.id];
@@ -335,6 +362,192 @@ $urlRouterProvider.otherwise('/tab/home');})
   .success(function(data){
     $scope.chefs = data.chefs;
   });
- // helloooooooooo
+
+
+  // FILTER BY
+
+    $scope.groups = [];
+    $scope.btnVal = "" ;
+    $scope.serveTime  =  "" ;
+    var btns  = document.getElementsByClassName("btn-diff");
+    // console.log(btns);
+
+    $scope.orderByMe = function(x) {
+        if (x == "EASY" || x =="HARD" || x == "MASTER" || x == '') {
+          $scope.btnVal = x ;
+          console.log($scope.btnVal);
+        };
+        if (x == 60 || x ==  15  || x == 30) {
+          $scope.serveTime = x ;
+          console.log($scope.serveTime);
+        };
+    };
+    $scope.replaceOther = function (index) {
+
+        if (index == 0) {
+            btns[1].classList.add(  'button-outline') ;
+            btns[2].classList.add(  'button-outline') ;
+            btns[3].classList.add( 'button-outline') ;
+
+        }else if(index == 1) {
+              btns[0].classList.add( 'button-outline') ;
+              btns[2].classList.add( 'button-outline') ;
+              btns[3].classList.add( 'button-outline') ;
+
+        }else if (index == 2) {
+              btns[0].classList.add( 'button-outline') ;
+              btns[1].classList.add( 'button-outline') ;
+              btns[3].classList.add( 'button-outline') ;
+
+        }else if (index == 3) {
+              btns[0].classList.add( 'button-outline') ;
+              btns[1].classList.add( 'button-outline') ;
+              btns[2].classList.add( 'button-outline') ;
+        }
+    };
+    $scope.replaceOtherTime = function (index) {
+
+        if (index == 4) {
+            btns[5].classList.add(  'button-outline') ;
+            btns[6].classList.add(  'button-outline') ;
+            btns[7].classList.add( 'button-outline') ;
+
+        }else if(index == 5) {
+              btns[6].classList.add( 'button-outline') ;
+              btns[4].classList.add( 'button-outline') ;
+              btns[7].classList.add( 'button-outline') ;
+
+        }else if (index == 6) {
+              btns[4].classList.add( 'button-outline') ;
+              btns[5].classList.add( 'button-outline') ;
+              btns[7].classList.add( 'button-outline') ;
+        }else  if (index == 7) {
+              btns[4].classList.add(  'button-outline') ;
+              btns[5].classList.add(  'button-outline') ;
+              btns[6].classList.add(  'button-outline') ;
+          }
+  //categories filter >>>
+        if (index == 8) {
+            btns[9].classList.add(  'button-outline') ;
+            btns[10].classList.add(  'button-outline') ;
+        }else if(index ==9) {
+              btns[8].classList.add( 'button-outline') ;
+              btns[10].classList.add( 'button-outline') ;
+        }else if (index ==10) {
+              btns[8].classList.add( 'button-outline') ;
+              btns[9].classList.add( 'button-outline') ;
+        }
+    };
+
+    $scope.makeActive = function( ) {
+      if (btns[0].classList.contains('button-outline')) {
+            btns[0].classList.remove('button-outline') ;
+              $scope.replaceOther (0) ;
+          }
+
+    };
+    $scope.makeActiveHard = function() {
+      if (btns[1].classList.contains('button-outline')) {
+          btns[1].classList.remove('button-outline') ;
+        }
+        $scope.replaceOther (1) ;
+        };
+
+    $scope.makeActiveMaster = function() {
+      if (btns[2].classList.contains('button-outline')) {
+          btns[2].classList.remove('button-outline') ;
+    }
+         $scope.replaceOther (2) ; };
+    $scope.makeActiveNone = function() {
+      if (btns[3].classList.contains('button-outline')) {
+          btns[3].classList.remove('button-outline') ;
+    }
+         $scope.replaceOther (3) ; };
+
+
+    $scope.makeActiveTimeOne  = function() {
+      if (btns[4].classList.contains('button-outline')) {
+          btns[4].classList.remove('button-outline') ;
+            $scope.replaceOtherTime(4) ;
+      }
+    };
+    $scope.makeActiveTimeTow  = function() {
+      if (btns[5].classList.contains('button-outline')) {
+          btns[5].classList.remove('button-outline') ;
+            $scope.replaceOtherTime(5) ;
+      }
+    };
+    $scope.makeActiveTimeThree  = function() {
+      if (btns[6].classList.contains('button-outline')) {
+          btns[6].classList.remove('button-outline') ;
+            $scope.replaceOtherTime(6) ;
+      }
+    };
+    $scope.makeActiveTimeThreePlus  = function() {
+      if (btns[7].classList.contains('button-outline')) {
+          btns[7].classList.remove('button-outline') ;
+            $scope.replaceOtherTime(7) ;
+      }
+    };
+
+    $scope.makeActiveCatOne  = function() {
+      if (btns[8].classList.contains('button-outline')) {
+          btns[8].classList.remove('button-outline') ;
+            $scope.replaceOtherTime(8) ;
+      }
+    };
+    $scope.makeActiveCatTow  = function() {
+      if (btns[9].classList.contains('button-outline')) {
+          btns[9].classList.remove('button-outline') ;
+            $scope.replaceOtherTime(9) ;
+      }
+    };
+    $scope.makeActiveCatThree  = function() {
+      if (btns[10].classList.contains('button-outline')) {
+          btns[10].classList.remove('button-outline') ;
+            $scope.replaceOtherTime(10) ;
+      }
+    };
+
+
+
+
+    for (var i=0; i<1; i++) {
+      $scope.groups[i] = {
+        name: "",
+        items: [],
+        show: false
+      };
+
+      for (var j=0; j<1; j++) {
+         $scope.groups[i].items.push(i + '-' + j);
+       }
+
+  };
+
+
+
+  $scope.toggleGroup = function(group) {
+    group.show = !group.show;
+  };
+  $scope.isGroupShown = function(group) {
+    return group.show;
+  };
+
+
+
  // branch
 }])
+// .filter('filterByTime' ,  function () {
+//   return function (times ,val) {
+//   var filtered = [];
+//   for (var i = 0; i < times.length; i++) {
+//   var item = times[i];
+//   if (item.totalminutes  < val  ) {
+//     filtered.push(item);
+//   }
+//   }
+// return filtered;
+// };
+//
+// });
