@@ -51,13 +51,18 @@ Preparation
 
   <div class="item item-icon-left assertive">
   <i class="icon ion-play"></i>
-Recipe video :
+Recipe video 
 
 <!-- {{data.video_link}} -->
   </div>
-  <div class="video-container">
-    <iframe class="youtube-player" type="text/html"  ng-src="{{trustSrc(movie.src)}}" allowfullscreen frameborder="0">
+  <div class="">
+      <iframe width="100%" height="315" src="{{trustSrc(movie.src)}}" frameborder="0" allowfullscreen></iframe>
   </div>
+
+
+  <!-- <div class="video-container">
+    <iframe class="youtube-player" type="text/html"  ng-src="{{trustSrc(movie.src)}}" allowfullscreen frameborder="0">
+  </div> -->
   <div class="item item-icon-left assertive">
   <i class="icon ion-heart"></i>
   You might also like

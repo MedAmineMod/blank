@@ -1,0 +1,5 @@
+$filter-bg-color    :  #800080b8 ;
+
+.bg-filter-content {
+  background-color:  $filter-bg-color  ;
+}
