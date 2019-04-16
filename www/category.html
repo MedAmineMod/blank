@@ -8,16 +8,16 @@ Recipes in <b>{{item.vid_name}}</b>
 
 <div class="row" style="flex-wrap: wrap;">
     <div class="col col-res-50" ng-repeat="item in recipes" ng-if="params.category==item.subcategory_id">
-        <a class="item item-thumbnail-left item-light" href="#/tab/details/{{item.id}}">
+    <a class="item item-thumbnail-left item-light" href="#/tab/details/{{item.id}}">
       <img src="{{item.image}}">
       <h2>{{item.title}}</h2>
       <p>
-  <i class="icon ion-android-notifications"></i> {{item.time_r}} Min &nbsp;
-  <i class="icon ion-android-people"></i> {{item.servings}} Ser.&nbsp;
-  <i class="icon ion-android-star"></i> {{item.dificult}}<br/></p>
+        <i class="icon ion-android-notifications"></i> {{item.time_r}} Min &nbsp;
+        <i class="icon ion-android-people"></i> {{item.servings}} Ser.&nbsp;
+        <i class="icon ion-android-star"></i> {{item.dificult}}<br/></p>
     </a>
     </div>
-    </div>
+</div>
 
 </ion-content>
 </ion-view>

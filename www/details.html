@@ -1,4 +1,4 @@
-<ion-view view-title="Details">
+<ion-view view-title="Details" class="righttoleft">
 <ion-content has-bouncing="false">
 <div id="details">
 <div class="row responsive-lg" style="flex-wrap: wrap">
@@ -45,7 +45,7 @@
 <!--  save + favorite + rating   -->
 
 
-<div class="default-div">
+<div class="default-div lefttoright">
       <a class="item item-avatar" href="#/tab/profile/{{data.chef}}" style="min-height: 52px;padding-bottom: 25px;">
       <img src="{{data.avatar}}">
       <h2>By {{data.chef_name}}</h2>
@@ -53,7 +53,7 @@
     </a>
     </div>
 
-  <div class="item item-icon-left assertive">
+  <div class="item item-icon-left assertive lefttoright">
   <i class="icon ion-clipboard"></i>
   Description
   </div>
@@ -64,7 +64,7 @@
 </div>
 
 <div class="padding">
-  <div class="item item-icon-left assertive">
+  <div class="item item-icon-left assertive lefttoright">
   <i class="icon ion-clipboard"></i>
 Ingredients
   </div>
@@ -73,13 +73,13 @@ Ingredients
   <p ng-bind-html="data.ingredients"></p>
   </div>
 <br/>
-  <div class="item item-icon-left assertive">
+  <div class="item item-icon-left assertive lefttoright">
   <i class="icon ion-android-restaurant"></i>
 Preparation
   </div>
   <p ng-bind-html="data.preparation" class="padding"></p>
 
-  <div class="item item-icon-left assertive">
+  <div class="item item-icon-left assertive lefttoright">
   <i class="icon ion-play"></i>
 Recipe video
 
