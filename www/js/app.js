@@ -27,6 +27,31 @@ angular.module('starter', ['ionic','app.side2_app','app.side1_app'])
 
 })
 
+/*
+.filter("video_linkFilter", function(){
+
+  return function(recipes){
+
+       var addUser;
+       var selectedUsers = [];
+
+       for(i=0;i<recipes.length;i++){
+           addUser = false;
+           if (recipes[i].video_link.length){
+             console.log(users[i].totalminutes);
+                addUser = true;
+               if (addUser){
+                   selectedUsers.push(users[i]);
+               }
+
+           }
+
+   }
+       return selectedUsers;
+   };
+
+})
+*/
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
@@ -237,6 +262,17 @@ $urlRouterProvider.otherwise('/tab/home');})
    };
 })
 
+.factory('myService', function(){
+  var userinfos = null;//the object to hold our data
+   return {
+   getJson:function(){
+     return userinfos;
+   },
+   setJson:function(value){
+    userinfos = value;
+   }
+   }
+})
 
 .controller('RecetasCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
     $http.get('http://samira_food.wcode-agency.com/json_recipes.json')
@@ -275,13 +311,15 @@ $urlRouterProvider.otherwise('/tab/home');})
 //***************************************************************************************
 //Videos-recipes  and videos Controllers :
 .controller('VideosCtrl' ,['$scope', '$http', '$state','$sce' ,function($scope, $http, $state ,$sce) {
-  $http.get('http://samira_food.wcode-agency.com/json_recipes.json')
+  $http.get('http://samira_food.wcode-agency.com/json_Vrecipes.json')
   .success(function(data){
     $scope.movie  ;
     $scope.recipes = data.recipes ;
     // for (var i = 0; i < $scope.recipes.length; i++) {
         $scope.trustSrc = function(src) {
-       return $sce.trustAsResourceUrl(src);
+
+            return $sce.trustAsResourceUrl(src);
+
         }
         // $scope.movie[i]   = {src:""+ data.recipes[i].normal_video_link +"", title:"tata"};
     // }

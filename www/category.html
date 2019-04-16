@@ -1,15 +1,15 @@
 <ion-view view-title="Category">
 <ion-content has-bouncing="false">
 
-<div class="item assertive" ng-repeat="item in categories" ng-if="params.category==item.idcategory">
+<div class="item assertive" ng-repeat="item in categories" ng-if="params.category==item.subcategory_id">
 Recipes in <b>{{item.vid_name}}</b>
 <p style="white-space: normal !important; margin-top: 10px;">{{item.summary}}</p>
 </div>
 
 <div class="row" style="flex-wrap: wrap;">
-    <div class="col col-res-50" ng-repeat="item in recipes" ng-if="params.category==item.category">
+    <div class="col col-res-50" ng-repeat="item in recipes" ng-if="params.category==item.subcategory_id">
         <a class="item item-thumbnail-left item-light" href="#/tab/details/{{item.id}}">
-      <img src="img/{{item.image}}">
+      <img src="{{item.image}}">
       <h2>{{item.title}}</h2>
       <p>
   <i class="icon ion-android-notifications"></i> {{item.time_r}} Min &nbsp;
