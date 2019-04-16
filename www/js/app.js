@@ -1,4 +1,4 @@
-angular.module('starter', ['ionic','app.side2_app'])
+angular.module('starter', ['ionic','app.side2_app','app.side1_app'])
 
 .filter("FilterbyAll", function(){
 
