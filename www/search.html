@@ -29,7 +29,6 @@
                       <a ng-click="orderByMe('HARD') ; makeActiveHard()"   ng-class="{'active': buttonActiveHard}"  class="button  btn-diff button-outline button-energized">HARD </a>
                       <a  ng-click="orderByMe('MASTER') ; makeActiveMaster()" ng-class="{'active': buttonActiveMaster}"  class="button  btn-diff  button-outline button-assertive">MASTER</a>
                       <a  ng-click="orderByMe('') ; makeActiveNone()" ng-class="{'active': buttonActiveMaster}"  class="button  btn-diff  button-outline button-assertive">None</a>
-
                     </div>
                     <p>Preparation Time</p>
                       <div class="button-bar">
@@ -40,9 +39,9 @@
                     </div>
                     <p>Categories</p>
                       <div class="button-bar">
-                      <a ng-click="makeActiveCatOne()" class="button btn-diff button-outline button-dark ">Cat 1  </a>
-                      <a  ng-click="makeActiveCatTow()" class="button btn-diff  button-outline button-dark ">Cat 2  </a>
-                      <a  ng-click="makeActiveCatThree()" class="button btn-diff button-outline button-dark ">Cat 3</a>
+                      <a ng-click="makeActiveCatOne() ; orderByMe(19) " class="button btn-diff button-outline button-dark ">Cat 1  </a>
+                      <a  ng-click="makeActiveCatTow() ; orderByMe(18)" class="button btn-diff  button-outline button-dark ">Cat 2  </a>
+                      <a  ng-click="makeActiveCatThree() ; orderByMe(17)" class="button btn-diff button-outline button-dark ">Cat 3</a>
                     </div>
 
           </ion-item>
@@ -51,11 +50,11 @@
 
 
 <div class="">
-  <!-- <h2>{{  btnVal + query  + serveTime }}</h2> -->
+  <!-- <h2>{{  btnVal + query  + serveTime + cato}}</h2> -->
 </div>
 <div class="row" style="flex-wrap: wrap;">
     <!-- <div class="col col-res-50" ng-repeat="item in recipes | filter:{ title : query  , dificult : btnVal  , totalminutes : serveTime  }  حلو "> -->
-    <div class="col col-res-50" ng-repeat="item in recipes | filter :{ title: query  ,  dificult:btnVal} | FilterbyAll :serveTime ">
+    <div class="col col-res-50" ng-repeat="item in recipes | filter :{ title: query  ,  dificult:btnVal ,  category_name :cato } | FilterbyAll :serveTime ">
         <a class="item item-thumbnail-left item-light" href="#/tab/details/{{item.id}}">
       <img src="{{item.image}}">
       <h2>{{item.title}}</h2>

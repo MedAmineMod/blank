@@ -40,9 +40,9 @@
     stroke: $spinner-energized-stroke;
     fill: $spinner-energized-fill;
   }
-  &.spinner-royal {
-    stroke: $spinner-royal-stroke;
-    fill: $spinner-royal-fill;
+  &.spinner-assertive {
+    stroke: $spinner-assertive-stroke;
+    fill: $spinner-assertive-fill;
   }
   &.spinner-dark {
     stroke: $spinner-dark-stroke;
@@ -91,8 +91,8 @@
   &.spinner-energized .stop2 {
     stop-color: $spinner-energized-fill;
   }
-  &.spinner-royal .stop2 {
-    stop-color: $spinner-royal-fill;
+  &.spinner-assertive .stop2 {
+    stop-color: $spinner-assertive-fill;
   }
   &.spinner-dark .stop2 {
     stop-color: $spinner-dark-fill;

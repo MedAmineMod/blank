@@ -274,11 +274,18 @@ $urlRouterProvider.otherwise('/tab/home');})
 //END OF Category and categories Controllers :
 //***************************************************************************************
 //Videos-recipes  and videos Controllers :
-.controller('VideosCtrl' ,['$scope', '$http', '$state', function($scope, $http, $state) {
-  $http.get('http://api.wcode-agency.com/videos.json')
+.controller('VideosCtrl' ,['$scope', '$http', '$state','$sce' ,function($scope, $http, $state ,$sce) {
+  $http.get('http://samira_food.wcode-agency.com/json_recipes.json')
   .success(function(data){
-    $scope.videos = data.videos;
-    console.log(data.videos);
+    $scope.movie  ;
+    $scope.recipes = data.recipes ;
+    // for (var i = 0; i < $scope.recipes.length; i++) {
+        $scope.trustSrc = function(src) {
+       return $sce.trustAsResourceUrl(src);
+        }
+        // $scope.movie[i]   = {src:""+ data.recipes[i].normal_video_link +"", title:"tata"};
+    // }
+
   });
 }] )
 .controller('VideoCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
@@ -369,6 +376,7 @@ $urlRouterProvider.otherwise('/tab/home');})
     $scope.groups = [];
     $scope.btnVal = "" ;
     $scope.serveTime  =  "" ;
+    $scope.cato = "" ;
     var btns  = document.getElementsByClassName("btn-diff");
     // console.log(btns);
 
@@ -381,7 +389,12 @@ $urlRouterProvider.otherwise('/tab/home');})
           $scope.serveTime = x ;
           console.log($scope.serveTime);
         };
+  if (x == 17 || x ==  18  || x == 19) {
+            $scope.cato = x ;
+          console.log($scope.cato);
+        };
     };
+
     $scope.replaceOther = function (index) {
 
         if (index == 0) {

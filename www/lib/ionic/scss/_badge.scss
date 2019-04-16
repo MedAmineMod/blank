@@ -47,8 +47,8 @@
   &.badge-energized {
     @include badge-style($badge-energized-bg, $badge-energized-text);
   }
-  &.badge-royal {
-    @include badge-style($badge-royal-bg, $badge-royal-text);
+  &.badge-assertive {
+    @include badge-style($badge-assertive-bg, $badge-assertive-text);
   }
   &.badge-dark {
     @include badge-style($badge-dark-bg, $badge-dark-text);

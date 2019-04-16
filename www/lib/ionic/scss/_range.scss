@@ -115,8 +115,8 @@
   &.range-energized {
     input { @include range-style($range-energized-track-bg); }
   }
-  &.range-royal {
-    input { @include range-style($range-royal-track-bg); }
+  &.range-assertive {
+    input { @include range-style($range-assertive-track-bg); }
   }
   &.range-dark {
     input { @include range-style($range-dark-track-bg); }
