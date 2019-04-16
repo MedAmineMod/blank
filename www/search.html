@@ -10,15 +10,60 @@
 </div>
 </div>
 
+<ion-list ">
+        <div ng-repeat="group in groups">
+          <ion-item class="item-stable"
+                    ng-click="toggleGroup(group)"
+                    ng-class="{active: isGroupShown(group)}">
+              <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i>
+
+            &nbsp;
+            Filter: {{group.name}}
+          </ion-item>
+          <ion-item class="item-accordion"
+                    ng-repeat="item in group.items"
+                    ng-show="isGroupShown(group)">
+
+                    <p>Difficulty</p><div class="button-bar">
+                      <a ng-click="orderByMe('EASY') ; makeActive()" ng-class="{'active': buttonActive}"  class="button btn-diff button-outline button-balanced"  >EASY </a>
+                      <a ng-click="orderByMe('HARD') ; makeActiveHard()"   ng-class="{'active': buttonActiveHard}"  class="button  btn-diff button-outline button-energized">HARD </a>
+                      <a  ng-click="orderByMe('MASTER') ; makeActiveMaster()" ng-class="{'active': buttonActiveMaster}"  class="button  btn-diff  button-outline button-assertive">MASTER</a>
+                      <a  ng-click="orderByMe('') ; makeActiveNone()" ng-class="{'active': buttonActiveMaster}"  class="button  btn-diff  button-outline button-assertive">None</a>
+                    </div>
+                    <p>Preparation Time</p>
+                      <div class="button-bar">
+                      <a  ng-click="makeActiveTimeOne() ; orderByMe(15)" class="button btn-diff button-outline button-dark ">-15 mins </a>
+                      <a ng-click="makeActiveTimeTow() ; orderByMe('30')" class="button btn-diff  button-outline button-dark ">-30 mins  </a>
+                      <a ng-click="makeActiveTimeThree() ;orderByMe(60)" class="button btn-diff button-outline button-dark ">-60 mins</a>
+                      <a ng-click="makeActiveTimeThreePlus() ;orderByMe(2000)" class="button btn-diff button-outline button-dark ">All</a>
+                    </div>
+                    <p>Categories</p>
+                      <div class="button-bar">
+                      <a ng-click="makeActiveCatOne() ; orderByMe(19) " class="button btn-diff button-outline button-dark ">Cat 1  </a>
+                      <a  ng-click="makeActiveCatTow() ; orderByMe(18)" class="button btn-diff  button-outline button-dark ">Cat 2  </a>
+                      <a  ng-click="makeActiveCatThree() ; orderByMe(17)" class="button btn-diff button-outline button-dark ">Cat 3</a>
+                    </div>
+
+          </ion-item>
+        </div>
+</ion-list>
+
+
+<div class="">
+  <!-- <h2>{{  btnVal + query  + serveTime + cato}}</h2> -->
+</div>
 <div class="row" style="flex-wrap: wrap;">
-    <div class="col col-res-50" ng-repeat="item in recipes | filter: query">
+    <!-- <div class="col col-res-50" ng-repeat="item in recipes | filter:{ title : query  , dificult : btnVal  , totalminutes : serveTime  }  حلو "> -->
+    <div class="col col-res-50" ng-repeat="item in recipes | filter :{ title: query  ,  dificult:btnVal ,  category_name :cato } | FilterbyAll :serveTime ">
         <a class="item item-thumbnail-left item-light" href="#/tab/details/{{item.id}}">
       <img src="{{item.image}}">
       <h2>{{item.title}}</h2>
       <p>
-  <i class="icon ion-android-notifications"></i> {{item.time_r}} Min &nbsp;
-  <i class="icon ion-android-people"></i> {{item.servings}} Servings&nbsp;
-  <i class="icon ion-android-star"></i> {{item.dificult}}<br/></p></p>
+        <i class="icon ion-android-notifications"></i> &nbsp; {{item.time_r}} Min <br/>
+        <i class="icon ion-android-people"></i> &nbsp; {{item.servings}} Servings <br/>
+        <i class="icon ion-android-star"></i> &nbsp; {{item.dificult}}<br/>
+    </p>
+
     </a>
     </div>
     </div>

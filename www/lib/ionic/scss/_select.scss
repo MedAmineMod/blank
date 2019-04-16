@@ -114,13 +114,13 @@
       color:$item-energized-text;
     }
   }
-  &.item-royal {
+  &.item-assertive {
     select{
-      background:$item-royal-bg;
-      color:$item-royal-text;
+      background:$item-assertive-bg;
+      color:$item-assertive-text;
     }
     &:after, .input-label{
-      color:$item-royal-text;
+      color:$item-assertive-text;
     }
   }
   &.item-dark  {

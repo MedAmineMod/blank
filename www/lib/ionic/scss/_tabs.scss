@@ -77,10 +77,10 @@
   @include tab-style($tabs-energized-bg, $tabs-energized-border, $tabs-energized-text);
   @include tab-badge-style($tabs-energized-text, $tabs-energized-bg);
 }
-.tabs-royal > .tabs,
-.tabs.tabs-royal {
-  @include tab-style($tabs-royal-bg, $tabs-royal-border, $tabs-royal-text);
-  @include tab-badge-style($tabs-royal-text, $tabs-royal-bg);
+.tabs-assertive > .tabs,
+.tabs.tabs-assertive {
+  @include tab-style($tabs-assertive-bg, $tabs-assertive-border, $tabs-assertive-text);
+  @include tab-badge-style($tabs-assertive-text, $tabs-assertive-bg);
 }
 .tabs-dark > .tabs,
 .tabs.tabs-dark {
@@ -218,7 +218,7 @@
   @include tabs-striped('tabs-assertive', $light, $assertive);
   @include tabs-striped('tabs-balanced', $light, $balanced);
   @include tabs-striped('tabs-energized', $light, $energized);
-  @include tabs-striped('tabs-royal', $light, $royal);
+  @include tabs-striped('tabs-assertive', $light, $assertive);
   @include tabs-striped('tabs-dark', $light, $dark);
 
   // doing this twice so striped tabs styles don't override specific bg and color vals
@@ -229,7 +229,7 @@
   @include tabs-striped-background('tabs-background-assertive', $assertive);
   @include tabs-striped-background('tabs-background-balanced', $balanced);
   @include tabs-striped-background('tabs-background-energized',$energized);
-  @include tabs-striped-background('tabs-background-royal', $royal);
+  @include tabs-striped-background('tabs-background-assertive', $assertive);
   @include tabs-striped-background('tabs-background-dark', $dark);
 
   @include tabs-striped-color('tabs-color-light', $light);
@@ -239,7 +239,7 @@
   @include tabs-striped-color('tabs-color-assertive', $assertive);
   @include tabs-striped-color('tabs-color-balanced', $balanced);
   @include tabs-striped-color('tabs-color-energized',$energized);
-  @include tabs-striped-color('tabs-color-royal', $royal);
+  @include tabs-striped-color('tabs-color-assertive', $assertive);
   @include tabs-striped-color('tabs-color-dark', $dark);
 
 }
@@ -251,7 +251,7 @@
 @include tabs-background('tabs-background-assertive', $assertive, $bar-assertive-border);
 @include tabs-background('tabs-background-balanced', $balanced, $bar-balanced-border);
 @include tabs-background('tabs-background-energized',$energized, $bar-energized-border);
-@include tabs-background('tabs-background-royal', $royal, $bar-royal-border);
+@include tabs-background('tabs-background-assertive', $assertive, $bar-assertive-border);
 @include tabs-background('tabs-background-dark', $dark, $bar-dark-border);
 
 @include tabs-color('tabs-color-light', $light);
@@ -261,7 +261,7 @@
 @include tabs-color('tabs-color-assertive', $assertive);
 @include tabs-color('tabs-color-balanced', $balanced);
 @include tabs-color('tabs-color-energized',$energized);
-@include tabs-color('tabs-color-royal', $royal);
+@include tabs-color('tabs-color-assertive', $assertive);
 @include tabs-color('tabs-color-dark', $dark);
 
 @mixin tabs-standard-color($style, $color, $off-color:$dark) {
@@ -299,7 +299,7 @@ ion-tabs {
   @include tabs-standard-color('tabs-color-active-assertive', $assertive, $dark);
   @include tabs-standard-color('tabs-color-active-balanced', $balanced, $dark);
   @include tabs-standard-color('tabs-color-active-energized',$energized, $dark);
-  @include tabs-standard-color('tabs-color-active-royal', $royal, $dark);
+  @include tabs-standard-color('tabs-color-active-assertive', $assertive, $dark);
   @include tabs-standard-color('tabs-color-active-dark', $dark, $light);
 }
 
@@ -509,8 +509,8 @@ ion-tabs {
   &.tab-item-energized {
     color: $energized;
   }
-  &.tab-item-royal {
-    color: $royal;
+  &.tab-item-assertive {
+    color: $assertive;
   }
   &.tab-item-dark {
     color: $dark;

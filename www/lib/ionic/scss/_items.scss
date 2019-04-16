@@ -89,8 +89,8 @@
   &.item-energized {
     @include item-style($item-energized-bg, $item-energized-border, $item-energized-text);
   }
-  &.item-royal {
-    @include item-style($item-royal-bg, $item-royal-border, $item-royal-text);
+  &.item-assertive {
+    @include item-style($item-assertive-bg, $item-assertive-border, $item-assertive-text);
   }
   &.item-dark {
     @include item-style($item-dark-bg, $item-dark-border, $item-dark-text);
@@ -138,8 +138,8 @@
   &.item-energized {
     @include item-active-style($item-energized-active-bg, $item-energized-active-border);
   }
-  &.item-royal {
-    @include item-active-style($item-royal-active-bg, $item-royal-active-border);
+  &.item-assertive {
+    @include item-active-style($item-assertive-active-bg, $item-assertive-active-border);
   }
   &.item-dark {
     @include item-active-style($item-dark-active-bg, $item-dark-active-border);
@@ -289,10 +289,10 @@ a.item-content {
       @include item-active-style($item-energized-active-bg, $item-energized-active-border);
     }
   }
-  &.item-royal > .item-content{
-    @include item-style($item-royal-bg, $item-royal-border, $item-royal-text);
+  &.item-assertive > .item-content{
+    @include item-style($item-assertive-bg, $item-assertive-border, $item-assertive-text);
     &.active, &:active {
-      @include item-active-style($item-royal-active-bg, $item-royal-active-border);
+      @include item-active-style($item-assertive-active-bg, $item-assertive-active-border);
     }
   }
   &.item-dark > .item-content{

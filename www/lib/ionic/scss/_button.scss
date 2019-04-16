@@ -113,10 +113,10 @@
     @include button-outline($button-energized-bg);
   }
 
-  &.button-royal {
-    @include button-style($button-royal-bg, $button-default-border, $button-royal-active-bg, $button-default-active-border, $button-royal-text);
-    @include button-clear($button-royal-bg);
-    @include button-outline($button-royal-bg);
+  &.button-assertive {
+    @include button-style($button-assertive-bg, $button-default-border, $button-assertive-active-bg, $button-default-active-border, $button-assertive-text);
+    @include button-clear($button-assertive-bg);
+    @include button-outline($button-assertive-bg);
   }
 
   &.button-dark {

@@ -48,8 +48,8 @@
   &.toggle-energized  {
     @include toggle-style($toggle-on-energized-border, $toggle-on-energized-bg);
   }
-  &.toggle-royal  {
-    @include toggle-style($toggle-on-royal-border, $toggle-on-royal-bg);
+  &.toggle-assertive  {
+    @include toggle-style($toggle-on-assertive-border, $toggle-on-assertive-bg);
   }
   &.toggle-dark  {
     @include toggle-style($toggle-on-dark-border, $toggle-on-dark-bg);
@@ -189,8 +189,8 @@
   .toggle-energized  {
     @include toggle-small-style($toggle-on-energized-bg);
   }
-  .toggle-royal  {
-    @include toggle-small-style($toggle-on-royal-bg);
+  .toggle-assertive  {
+    @include toggle-small-style($toggle-on-assertive-bg);
   }
   .toggle-dark  {
     @include toggle-small-style($toggle-on-dark-bg);
