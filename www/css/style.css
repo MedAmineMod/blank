@@ -9,15 +9,15 @@
 .note{border:1px solid #b2b2b2;border-radius:6px;padding:5px 10px;color:#b2b2b2;display: inline-block;position:relative;background: #ffffff; bottom: -15px;left: 15px;}
 .note-wrap{border:1px solid #b2b2b2;border-radius:6px;padding:25px 10px;color:#b2b2b2;margin-bottom: 20px;}
 .author{color: #b2b2b2;}
-.red-color{color: #c0392b;}
+.red-color{color: #800180;}
 .author a{color: #b2b2b2; text-decoration: none;}
 .advanced{}
-.profile_bg{background: #c0392b; min-height: 150px; height: auto; padding: 20px; width: 100%; text-align: center;}
+.profile_bg{background: #800180; min-height: 150px; height: auto; padding: 20px; width: 100%; text-align: center;}
 .profile_bg h4{color: #ffffff}
 .profile_bg p{color: #feaea5;margin: 0; margin-top: 10px;max-width: 700px; margin-left: auto; margin-right: auto;}
 .profile_bg .stars i{ color: #feaea5; margin: 3px; font-size: 11px;}
 .profile_bg img{max-width: 100px; width: 100%; border-radius: 200px; border-radius: 100%; border: 3px solid #ffffff; border-color: #ffffff; padding: 4px;}
-.category_bg{background: #c0392b; height: auto; padding: 10px; width: 100%; text-align: center;}
+.category_bg{background: #800180; height: auto; padding: 10px; width: 100%; text-align: center;}
 .category_bg h4{color: #ffffff;}
 .category_bg p{color: #ffffff;margin: 0; margin-top: 10px;max-width: 700px; margin-left: auto; margin-right: auto;text-shadow: 0 1px 3px rgba(0,0,0,0.6);}
 .image-extended{max-height: 300px;}
@@ -26,7 +26,7 @@
 .categorias img{border:none;max-width: 50%;margin-left: auto;margin-right: auto;text-align: center;display: block;}
 .spinner svg{margin-left: auto;margin-right: auto;text-align: center;display: block;}
 .ingredients li{margin-bottom: 8px;}
-.ingredients li:before{content: '\f2f4';font-family: "Ionicons";margin-right: 5px; color: #c0392b;}
+.ingredients li:before{content: '\f2f4';font-family: "Ionicons";margin-right: 5px; color: #800180;}
 .item-avatar {padding-top: 25px;} .item-avatar .badge{top: 23px;}.item-icon-right .icon{color: #ffd8d4;}
 .image-category{max-width: 350px; max-height: 350px;padding: 3px; border: 1px solid #ebebeb;}
 .default-div h2{font-size: 14px; margin-top: 0px;}.categories a{text-decoration: none;}

@@ -229,7 +229,6 @@ $urlRouterProvider.otherwise('/tab/home');})
     $scope.recipes = data.recipes;
     $scope.data = data.recipes[$state.params.id];
   });
-
 }])
 
 //Category-recipes and categories Controllers :
@@ -301,33 +300,32 @@ $urlRouterProvider.otherwise('/tab/home');})
 
     });
 
-    $http.get('http://samira_food.wcode-agency.com/json_chefs.json')
+$http.get('http://samira_food.wcode-agency.com/json_chefs.json')
   .success(function(data){
     $scope.data = data.chefs[$state.params.id];
     $scope.chefs = data.chefs;
   });
-
 }])
 
 .controller('DetailsCtrl', ['$scope', '$http', '$state', 'myService', function($scope, $http, $state, myService) {
-
   $http.get('http://samira_food.wcode-agency.com/json_recipes.json')
   .success(function(data){
     $scope.myuserinfos = myService.getJson();
-
     for (var i = 0; i < data.recipes.length; i++) {
     console.log(  data.recipes[i].id);
     if ($state.params.id == data.recipes[i].id ) {
         $scope.data = data.recipes[i];
-
         $http.post("http://samira_food.wcode-agency.com/test_post",(['getsaverecipe',$scope.myuserinfos,$state.params.id]),{headers: {'Content-Type': 'multipart/form-data'}})
           .success(function(data){
             console.log(data);
             $scope.saveclr = data.clr;
+            $scope.favclr = data.favclr;
+            $scope.starsrecipe = data.starsrecipe;
             $scope.disbtn = data.disable;
         });
+
     }
-    }
+  }
     console.log(data.recipes);
     $scope.recipes = data.recipes;
   });
@@ -337,9 +335,6 @@ $urlRouterProvider.otherwise('/tab/home');})
     $scope.chefs = data.chefs;
   });
 
-
-
-
   $scope.saveR = function(recipe) {
     //console.log($scope.loginData);
     //console.log(recipe);
@@ -348,6 +343,15 @@ $urlRouterProvider.otherwise('/tab/home');})
         console.log(data);
     });
   };
+
+  $scope.favR = function(recipe) {
+      //console.log($scope.loginData);
+      //console.log(recipe);
+      $http.post("http://samira_food.wcode-agency.com/test_post",(['favrecipe',$scope.myuserinfos,recipe]),{headers: {'Content-Type': 'multipart/form-data'}})
+        .success(function(data){
+          console.log(data);
+      });
+    };
   }])
 
   .controller('SearchCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
@@ -361,6 +365,6 @@ $urlRouterProvider.otherwise('/tab/home');})
   .success(function(data){
     $scope.chefs = data.chefs;
   });
- // helloooooooooo
- // branch
+
+
 }])

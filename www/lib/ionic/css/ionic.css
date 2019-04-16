@@ -3949,14 +3949,14 @@ a.subdued {
     .bar.bar-calm.bar-footer {
       background-image: linear-gradient(180deg, #0a9dc7, #0a9dc7 50%, transparent 50%); }
   .bar.bar-assertive {
-    border-color: #c0392b;
-    background-color: #c0392b;
-    background-image: linear-gradient(0deg, #c0392b, #c0392b 50%, transparent 50%);
+    border-color: #800180;
+    background-color: #800180;
+    background-image: linear-gradient(0deg, #800180, #800180 50%, transparent 50%);
     color: #fff; }
     .bar.bar-assertive .title {
       color: #fff; }
     .bar.bar-assertive.bar-footer {
-      background-image: linear-gradient(180deg, #c0392b, #c0392b 50%, transparent 50%); }
+      background-image: linear-gradient(180deg, #800180, #800180 50%, transparent 50%); }
   .bar.bar-balanced {
     border-color: #28a54c;
     background-color: #33cd5f;
@@ -4173,15 +4173,15 @@ a.subdued {
     background: none; }
 
 .bar-assertive .button {
-  border-color: #c0392b;
-  background-color: #c0392b;
+  border-color: #800180;
+  background-color: #800180;
   color: #fff; }
   .bar-assertive .button:hover {
     color: #fff;
     text-decoration: none; }
   .bar-assertive .button.active, .bar-assertive .button.activated {
-    border-color: #c0392b;
-    background-color: #c0392b; }
+    border-color: #800180;
+    background-color: #800180; }
   .bar-assertive .button.button-clear {
     border-color: transparent;
     background: none;
@@ -4424,14 +4424,14 @@ a.subdued {
 
 .tabs-assertive > .tabs,
 .tabs.tabs-assertive {
-  border-color: #c0392b;
-  background-color: #c0392b;
-  background-image: linear-gradient(0deg, #c0392b, #c0392b 50%, transparent 50%);
+  border-color: #800180;
+  background-color: #800180;
+  background-image: linear-gradient(0deg, #800180, #800180 50%, transparent 50%);
   color: #fff; }
   .tabs-assertive > .tabs .tab-item .badge,
   .tabs.tabs-assertive .tab-item .badge {
     background-color: #fff;
-    color: #c0392b; }
+    color: #800180; }
 
 .tabs-balanced > .tabs,
 .tabs.tabs-balanced {
@@ -4566,7 +4566,7 @@ a.subdued {
   top: 4%; }
 
 .tabs-striped.tabs-assertive .tabs {
-  background-color: #c0392b; }
+  background-color: #800180; }
 
 .tabs-striped.tabs-assertive .tab-item {
   color: rgba(255, 255, 255, 0.4);
@@ -4672,7 +4672,7 @@ a.subdued {
   background-image: none; }
 
 .tabs-striped.tabs-background-assertive .tabs {
-  background-color: #c0392b;
+  background-color: #800180;
   background-image: none; }
 
 .tabs-striped.tabs-background-balanced .tabs {
@@ -4754,8 +4754,8 @@ a.subdued {
     opacity: 0.4; }
   .tabs-striped.tabs-color-assertive .tab-item.tab-item-active, .tabs-striped.tabs-color-assertive .tab-item.active, .tabs-striped.tabs-color-assertive .tab-item.activated {
     margin-top: -2px;
-    color: #c0392b;
-    border: 0 solid #c0392b;
+    color: #800180;
+    border: 0 solid #800180;
     border-top-width: 2px; }
     .tabs-striped.tabs-color-assertive .tab-item.tab-item-active .badge, .tabs-striped.tabs-color-assertive .tab-item.active .badge, .tabs-striped.tabs-color-assertive .tab-item.activated .badge {
       top: 2px;
@@ -4843,9 +4843,9 @@ a.subdued {
 
 .tabs-background-assertive .tabs,
 .tabs-background-assertive > .tabs {
-  background-color: #c0392b;
-  background-image: linear-gradient(0deg, #c0392b, #c0392b 50%, transparent 50%);
-  border-color: #c0392b; }
+  background-color: #800180;
+  background-image: linear-gradient(0deg, #800180, #800180 50%, transparent 50%);
+  border-color: #800180; }
 
 .tabs-background-balanced .tabs,
 .tabs-background-balanced > .tabs {
@@ -4921,8 +4921,8 @@ a.subdued {
   .tabs-color-assertive .tab-item .badge {
     opacity: 0.4; }
   .tabs-color-assertive .tab-item.tab-item-active, .tabs-color-assertive .tab-item.active, .tabs-color-assertive .tab-item.activated {
-    color: #c0392b;
-    border: 0 solid #c0392b; }
+    color: #800180;
+    border: 0 solid #800180; }
     .tabs-color-assertive .tab-item.tab-item-active .badge, .tabs-color-assertive .tab-item.active .badge, .tabs-color-assertive .tab-item.activated .badge {
       opacity: 1; }
 
@@ -5009,11 +5009,11 @@ ion-tabs.tabs-striped.tabs-color-active-calm .tab-item.tab-item-active, ion-tabs
 ion-tabs.tabs-color-active-assertive .tab-item {
   color: #444; }
   ion-tabs.tabs-color-active-assertive .tab-item.tab-item-active, ion-tabs.tabs-color-active-assertive .tab-item.active, ion-tabs.tabs-color-active-assertive .tab-item.activated {
-    color: #c0392b; }
+    color: #800180; }
 
 ion-tabs.tabs-striped.tabs-color-active-assertive .tab-item.tab-item-active, ion-tabs.tabs-striped.tabs-color-active-assertive .tab-item.active, ion-tabs.tabs-striped.tabs-color-active-assertive .tab-item.activated {
-  border-color: #c0392b;
-  color: #c0392b; }
+  border-color: #800180;
+  color: #800180; }
 
 ion-tabs.tabs-color-active-balanced .tab-item {
   color: #444; }
@@ -5215,7 +5215,7 @@ ion-tabs.tabs-striped.tabs-color-active-dark .tab-item.tab-item-active, ion-tabs
   .tab-item.tab-item-active.tab-item-assertive,
   .tab-item.active.tab-item-assertive,
   .tab-item.activated.tab-item-assertive {
-    color: #c0392b; }
+    color: #800180; }
   .tab-item.tab-item-active.tab-item-balanced,
   .tab-item.active.tab-item-balanced,
   .tab-item.activated.tab-item-balanced {
@@ -5762,8 +5762,8 @@ ion-tabs.tabs-striped.tabs-color-active-dark .tab-item.tab-item-active, ion-tabs
     background-color: #11c1f3;
     color: #fff; }
   .item.item-assertive {
-    border-color: #c0392b;
-    background-color: #c0392b;
+    border-color: #800180;
+    background-color: #800180;
     color: #fff; }
   .item.item-balanced {
     border-color: #28a54c;
@@ -5875,16 +5875,16 @@ ion-tabs.tabs-striped.tabs-color-active-dark .tab-item.tab-item-active, ion-tabs
   .item-complex.activated .item-content.item-assertive,
   .item .item-content.active.item-assertive,
   .item .item-content.activated.item-assertive {
-    border-color: #c0392b;
-    background-color: #c0392b; }
+    border-color: #800180;
+    background-color: #800180; }
     .item.active.item-assertive.item-complex > .item-content,
     .item.activated.item-assertive.item-complex > .item-content,
     .item-complex.active .item-content.item-assertive.item-complex > .item-content,
     .item-complex.activated .item-content.item-assertive.item-complex > .item-content,
     .item .item-content.active.item-assertive.item-complex > .item-content,
     .item .item-content.activated.item-assertive.item-complex > .item-content {
-      border-color: #c0392b;
-      background-color: #c0392b; }
+      border-color: #800180;
+      background-color: #800180; }
   .item.active.item-balanced,
   .item.activated.item-balanced,
   .item-complex.active .item-content.item-balanced,
@@ -6082,15 +6082,15 @@ a.item-content {
       background-color: #0a9dc7; }
 
 .item-complex.item-assertive > .item-content {
-  border-color: #c0392b;
-  background-color: #c0392b;
+  border-color: #800180;
+  background-color: #800180;
   color: #fff; }
   .item-complex.item-assertive > .item-content.active, .item-complex.item-assertive > .item-content:active {
-    border-color: #c0392b;
-    background-color: #c0392b; }
+    border-color: #800180;
+    background-color: #800180; }
     .item-complex.item-assertive > .item-content.active.item-complex > .item-content, .item-complex.item-assertive > .item-content:active.item-complex > .item-content {
-      border-color: #c0392b;
-      background-color: #c0392b; }
+      border-color: #800180;
+      background-color: #800180; }
 
 .item-complex.item-balanced > .item-content {
   border-color: #28a54c;
@@ -6517,7 +6517,7 @@ button.item.item-button-right {
   transition-delay: 125ms; }
 
 .item-delete .button.icon {
-  color: #c0392b;
+  color: #800180;
   font-size: 24px; }
   .item-delete .button.icon:hover {
     opacity: .7; }
@@ -6753,7 +6753,7 @@ button.item.item-button-right {
 
 .tabs .tab-item .badge.badge-assertive,
 .badge.badge-assertive {
-  background-color: #c0392b;
+  background-color: #800180;
   color: #fff; }
 
 .tabs .tab-item .badge.badge-balanced,
@@ -7466,8 +7466,8 @@ ion-slides {
     stroke: #33cd5f;
     fill: #33cd5f; }
   .spinner.spinner-assertive {
-    stroke: #c0392b;
-    fill: #c0392b; }
+    stroke: #800180;
+    fill: #800180; }
   .spinner.spinner-energized {
     stroke: #ffc900;
     fill: #ffc900; }
@@ -7508,7 +7508,7 @@ ion-slides {
   stop-color: #33cd5f; }
 
 .spinner-spiral.spinner-assertive .stop2 {
-  stop-color: #c0392b; }
+  stop-color: #800180; }
 
 .spinner-spiral.spinner-energized .stop2 {
   stop-color: #ffc900; }
@@ -7902,12 +7902,12 @@ input[type="checkbox"][readonly] {
 
 .checkbox-assertive input:before,
 .checkbox-assertive .checkbox-icon:before {
-  border-color: #c0392b; }
+  border-color: #800180; }
 
 .checkbox-assertive input:checked:before,
 .checkbox-assertive input:checked + .checkbox-icon:before {
-  background: #c0392b;
-  border-color: #c0392b; }
+  background: #800180;
+  border-color: #800180; }
 
 .checkbox-balanced input:before,
 .checkbox-balanced .checkbox-icon:before {
@@ -8098,8 +8098,8 @@ input:checked + .checkbox-icon:after {
   background-color: #11c1f3; }
 
 .toggle.toggle-assertive input:checked + .track {
-  border-color: #c0392b;
-  background-color: #c0392b; }
+  border-color: #800180;
+  background-color: #800180; }
 
 .toggle.toggle-balanced input:checked + .track {
   border-color: #33cd5f;
@@ -8243,7 +8243,7 @@ input:checked + .checkbox-icon:after {
   background-color: rgba(239, 71, 58, 0.5); }
 
 .toggle-small .toggle-assertive input:checked + .track .handle {
-  background-color: #c0392b; }
+  background-color: #800180; }
 
 .toggle-small .toggle-balanced input:checked + .track {
   background-color: rgba(51, 205, 95, 0.5); }
@@ -8415,9 +8415,9 @@ input:checked + .checkbox-icon:after {
   .range.range-balanced input::-ms-fill-lower {
     background: #33cd5f; }
   .range.range-assertive input::-webkit-slider-thumb:before {
-    background: #c0392b; }
+    background: #800180; }
   .range.range-assertive input::-ms-fill-lower {
-    background: #c0392b; }
+    background: #800180; }
   .range.range-energized input::-webkit-slider-thumb:before {
     background: #ffc900; }
   .range.range-energized input::-ms-fill-lower {
@@ -8535,7 +8535,7 @@ input:checked + .checkbox-icon:after {
   .item-select.item-calm:after, .item-select.item-calm .input-label {
     color: #fff; }
   .item-select.item-assertive select {
-    background: #c0392b;
+    background: #800180;
     color: #fff; }
   .item-select.item-assertive:after, .item-select.item-assertive .input-label {
     color: #fff; }
@@ -8735,28 +8735,28 @@ progress {
         color: #fff; }
   .button.button-assertive {
     border-color: transparent;
-    background-color: #c0392b;
+    background-color: #800180;
     color: #fff; }
     .button.button-assertive:hover {
       color: #fff;
       text-decoration: none; }
     .button.button-assertive.active, .button.button-assertive.activated {
       border-color: #a2a2a2;
-      background-color: #c0392b; }
+      background-color: #800180; }
     .button.button-assertive.button-clear {
       border-color: transparent;
       background: none;
       box-shadow: none;
-      color: #c0392b; }
+      color: #800180; }
     .button.button-assertive.button-icon {
       border-color: transparent;
       background: none; }
     .button.button-assertive.button-outline {
-      border-color: #c0392b;
+      border-color: #800180;
       background: transparent;
-      color: #c0392b; }
+      color: #800180; }
       .button.button-assertive.button-outline.active, .button.button-assertive.button-outline.activated {
-        background-color: #c0392b;
+        background-color: #800180;
         box-shadow: none;
         color: #fff; }
   .button.button-balanced {
@@ -9010,7 +9010,7 @@ a.button {
   .button-bar.bar-calm > .button {
     border-color: #0a9dc7; }
   .button-bar.bar-assertive > .button {
-    border-color: #c0392b; }
+    border-color: #800180; }
   .button-bar.bar-balanced > .button {
     border-color: #28a54c; }
   .button-bar.bar-energized > .button {
@@ -9530,13 +9530,13 @@ a.button {
   border-color: #0a9dc7; }
 
 .assertive, a.assertive {
-  color: #c0392b; }
+  color: #800180; }
 
 .assertive-bg {
-  background-color: #c0392b; }
+  background-color: #800180; }
 
 .assertive-border {
-  border-color: #c0392b; }
+  border-color: #800180; }
 
 .balanced, a.balanced {
   color: #33cd5f; }
