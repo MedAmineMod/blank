@@ -1,19 +1,19 @@
 <ion-view view-title="Recipes">
 <ion-content has-bouncing="false">
 
-<ion-slide-box does-continue="true">
+<ion-slide-box does-continue="false">
 <ion-slide ng-repeat="item in recipes | limitTo: 10">
 
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('img/{{item.image}}');">
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('{{item.image}}');">
 <div class="card-category">BY {{item.chef_name}}</div>
 <div class="card-description">
   <h2>{{item.title}}</h2>
   <p>
   <i class="icon ion-android-notifications"></i> {{item.time_r}} Min &nbsp;
   <i class="icon ion-android-people"></i> {{item.servings}} Servings&nbsp;
-  <i class="icon ion-android-star"></i> {{item.dificult}}<br/></p></p>
+  <i class="icon ion-android-star"></i> {{item.dificult}}<br/></p>
 </div>
-<img class="card-user avatar" src="img/{{item.avatar}}">
+<img class="card-user avatar" src="{{item.avatar}}">
 <a class="card-link" href="#/tab/details/{{item.id}}" ></a>
 </div>
 

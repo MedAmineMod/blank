@@ -297,6 +297,7 @@ $urlRouterProvider.otherwise('/tab/home');})
   $http.get('http://samira_food.wcode-agency.com/json_recipes.json')
   .success(function(data){
     $scope.recipes = data.recipes;
+    $scope.subname = data.recipes.subcategory_name;
     //$scope.data = data.recipes[$state.category];
 
     });
@@ -397,7 +398,7 @@ $urlRouterProvider.otherwise('/tab/home');})
   }])
 
 */
-.controller('DetailsCtrl', ['$scope', '$http', '$state' ,  '$sce', function($scope, $http, $state , $sce) {
+.controller('DetailsCtrl', ['$scope', '$http', '$state' , 'myService' ,  '$sce', function($scope, $http, $state , $sce , myService) {
 
 //  .controller('DetailsCtrl', ['$scope', '$http', '$state', 'myService', function($scope, $http, $state, myService) {
   $http.get('http://samira_food.wcode-agency.com/json_recipes.json')

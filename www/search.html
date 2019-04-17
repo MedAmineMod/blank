@@ -10,6 +10,11 @@
 </div>
 </div>
 
+<style media="screen">
+  .button-bar > .button{
+    border-width: 1px 1px 1px 1px;
+  }
+</style>
 <ion-list ">
         <div ng-repeat="group in groups">
           <ion-item class="item-stable"
@@ -27,21 +32,25 @@
                     <p>Difficulty</p><div class="button-bar">
                       <a ng-click="orderByMe('EASY') ; makeActive()" ng-class="{'active': buttonActive}"  class="button btn-diff button-outline button-balanced"  >EASY </a>
                       <a ng-click="orderByMe('HARD') ; makeActiveHard()"   ng-class="{'active': buttonActiveHard}"  class="button  btn-diff button-outline button-energized">HARD </a>
+                    </div>
+                    <div class="button-bar">
                       <a  ng-click="orderByMe('MASTER') ; makeActiveMaster()" ng-class="{'active': buttonActiveMaster}"  class="button  btn-diff  button-outline button-assertive">MASTER</a>
                       <a  ng-click="orderByMe('') ; makeActiveNone()" ng-class="{'active': buttonActiveMaster}"  class="button  btn-diff  button-outline button-assertive">None</a>
                     </div>
                     <p>Preparation Time</p>
                       <div class="button-bar">
                       <a  ng-click="makeActiveTimeOne() ; orderByMe(15)" class="button btn-diff button-outline button-dark ">-15 mins </a>
-                      <a ng-click="makeActiveTimeTow() ; orderByMe('30')" class="button btn-diff  button-outline button-dark ">-30 mins  </a>
+                      <a ng-click="makeActiveTimeTow() ; orderByMe('30')" class="button btn-diff  button-outline button-dark ">-30 mins  </a><br>
+                      </div>
+                      <div class="button-bar">
                       <a ng-click="makeActiveTimeThree() ;orderByMe(60)" class="button btn-diff button-outline button-dark ">-60 mins</a>
                       <a ng-click="makeActiveTimeThreePlus() ;orderByMe(2000)" class="button btn-diff button-outline button-dark ">All</a>
                     </div>
                     <p>Categories</p>
                       <div class="button-bar">
-                      <a ng-click="makeActiveCatOne() ; orderByMe(19) " class="button btn-diff button-outline button-dark ">Cat 1  </a>
-                      <a  ng-click="makeActiveCatTow() ; orderByMe(18)" class="button btn-diff  button-outline button-dark ">Cat 2  </a>
-                      <a  ng-click="makeActiveCatThree() ; orderByMe(17)" class="button btn-diff button-outline button-dark ">Cat 3</a>
+                      <a ng-click="makeActiveCatOne() ; orderByMe(19) " class="button btn-diff button-outline button-dark "> وصفات</a>
+                      <a  ng-click="makeActiveCatTow() ; orderByMe(18)" class="button btn-diff  button-outline button-dark ">برامج</a>
+                      <a  ng-click="makeActiveCatThree() ; orderByMe(17)" class="button btn-diff button-outline button-dark ">أرشيف</a>
                     </div>
 
           </ion-item>

@@ -2,7 +2,7 @@
 <ion-content has-bouncing="false">
 
 <div class="profile_bg" ng-repeat="item in chefs" ng-if="params.chef==item.idchef">
-  <img src="img/{{item.avatar}}">
+  <img src="{{item.avatar}}">
   <h4>{{item.chef_name}}</h4>
   <span class="stars">
   <i class="ion-star"></i><i class="ion-star"></i><i class="ion-star"></i><i class="ion-star"></i><i class="ion-star"></i>
@@ -17,7 +17,7 @@ Recipes by <b>{{item.chef_name}}</b>
 <div class="row" style="flex-wrap: wrap;">
     <div class="col col-res-50" ng-repeat="item in recipes" ng-if="params.chef==item.chef">
         <a class="item item-thumbnail-left item-light" href="#/tab/details/{{item.id}}">
-      <img src="img/{{item.image}}">
+      <img src="{{item.image}}">
       <h2>{{item.title}}</h2>
       <p>
   <i class="icon ion-android-notifications"></i> {{item.time_r}} Min &nbsp;
