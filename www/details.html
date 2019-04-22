@@ -5,7 +5,7 @@
 <div class="col col-33">
 <img src="{{data.image}}" class="full-image image-extended"/>
 </div>
-<div class="col col-67">
+<div class="col col-67 right-to-left ">
 <div class="padding" style="padding-top: 0">
 <h3>{{data.title}}</h3>
   <h5 class="red-color">
@@ -15,7 +15,7 @@
   </h5>
 </div>
 
-<div class="default-div">
+<div class="default-div  left-to-right">
       <a class="item item-avatar" href="#/tab/profile/{{data.chef}}" style="min-height: 52px;padding-bottom: 25px;">
       <img src="{{data.avatar}}">
       <h2>By {{data.chef_name}}</h2>
@@ -33,8 +33,8 @@
 </div>
 </div>
 
-<div class="padding">
-  <div class="item item-icon-left assertive">
+<div class="padding right-to-left">
+  <div class="item item-icon-left assertive left-to-right">
   <i class="icon ion-clipboard"></i>
 Ingredients
   </div>
@@ -43,13 +43,13 @@ Ingredients
   <p ng-bind-html="data.ingredients"></p>
   </div>
 <br/>
-  <div class="item item-icon-left assertive">
+  <div class="item item-icon-left assertive left-to-right">
   <i class="icon ion-android-restaurant"></i>
 Preparation
   </div>
   <p ng-bind-html="data.preparation" class="padding"></p>
 
-  <div class="item item-icon-left assertive">
+  <div class="item item-icon-left assertive left-to-right">
   <i class="icon ion-play"></i>
 Recipe video
 
@@ -63,14 +63,14 @@ Recipe video
   <!-- <div class="video-container">
     <iframe class="youtube-player" type="text/html"  ng-src="{{trustSrc(movie.src)}}" allowfullscreen frameborder="0">
   </div> -->
-  <div class="item item-icon-left assertive">
+  <div class="item item-icon-left assertive left-to-right">
   <i class="icon ion-heart"></i>
   You might also like
   </div>
 
  </div>
 
-<div class="row" style="flex-wrap: wrap;">
+<div class="row right-to-left" style="flex-wrap: wrap;">
     <div class="col col-res-50" ng-repeat="item in recipes | limitTo: 7">
         <a class="item item-thumbnail-left item-light" href="#/tab/details/{{item.id}}">
       <img src="{{item.image}}">
