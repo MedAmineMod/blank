@@ -79,6 +79,7 @@ Preparation
   </div>
   <p ng-bind-html="data.preparation" class="padding"></p>
 
+  <div class="" ng-show="showMovie">
   <div class="item item-icon-left assertive lefttoright">
   <i class="icon ion-play"></i>
 Recipe video
@@ -87,6 +88,7 @@ Recipe video
   </div>
   <div class="">
       <iframe width="100%" height="315" src="{{trustSrc(movie.src)}}" frameborder="0" allowfullscreen></iframe>
+  </div>
   </div>
 
   <br>
