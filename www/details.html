@@ -91,11 +91,20 @@ Recipe video
 
   <br>
 
+  <div class="item item-icon-left assertive lefttoright">
+  <i class="icon ion-clipboard"></i>
+  Comments
+  </div>
+  <div ng-repeat="item in comments">
+<p>
+  {{item.namecmt}} ( {{item.datecmt}} )<br>
+  {{item.comment}}<br>
+</p>
+</div>
 <div ng-repeat="item in myuserinfos">
   <form ng-submit="docomment()" enctype="multipart/form-data">
    <div class="list">
      <label class="item item-input">
-       <span class="input-label">comment</span>
        <textarea type="text" style="height:200px;" ng-model="comment.text" placeholder="comment"></textarea>
      </label>
      <br>
@@ -106,18 +115,6 @@ Recipe video
   </form>
   </div>
 
-
-  <form ng-submit="docomment()" enctype="multipart/form-data">
-   <div class="list">
-     <label class="item item-input">
-       <textarea type="text" style="height:100px;" ng-model="comment.text" placeholder="comment"></textarea>
-     </label>
-     <br>
-     <label class="item">
-       <button class="button button-block button-positive" type="submit">post comment</button>
-     </label>
-   </div>
-  </form>
 
   <!-- <div class="video-container">
     <iframe class="youtube-player" type="text/html"  ng-src="{{trustSrc(movie.src)}}" allowfullscreen frameborder="0">

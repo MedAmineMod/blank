@@ -111,7 +111,6 @@ if(( /(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent) )) {
 })
 
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider){
-
 $ionicConfigProvider.tabs.position("top");
 $ionicConfigProvider.navBar.alignTitle("center");
 
@@ -211,8 +210,6 @@ $stateProvider
 //Categorie and categories router and sriwriwrate
 //Videos and and video State  router and sriwriwrate
 
-
-
     .state('tab.chefs', {
         url: '/listchefs',
         views: {
@@ -299,7 +296,6 @@ $urlRouterProvider.otherwise('/tab/home');})
     $scope.recipes = data.recipes;
     $scope.subname = data.recipes.subcategory_name;
     //$scope.data = data.recipes[$state.category];
-
     });
 
   $http.get('http://samira_food.wcode-agency.com/json_categories.json')
@@ -307,6 +303,7 @@ $urlRouterProvider.otherwise('/tab/home');})
     $scope.data = data.categories[$state.params.id];
     $scope.categories = data.categories;
   });
+
 }])
 //END OF Category and categories Controllers :
 //***************************************************************************************
@@ -318,9 +315,7 @@ $urlRouterProvider.otherwise('/tab/home');})
     $scope.recipes = data.recipes ;
     // for (var i = 0; i < $scope.recipes.length; i++) {
         $scope.trustSrc = function(src) {
-
             return $sce.trustAsResourceUrl(src);
-
         }
         // $scope.movie[i]   = {src:""+ data.recipes[i].normal_video_link +"", title:"tata"};
     // }
@@ -408,7 +403,14 @@ $urlRouterProvider.otherwise('/tab/home');})
     console.log(data.recipes[i].id);
 
     if ($state.params.id == data.recipes[i].id ) {
+      
         $scope.data = data.recipes[i];
+        $http.post("http://samira_food.wcode-agency.com/test_post",(['getcomments',data.recipes[i].id]),{headers: {'Content-Type': 'multipart/form-data'}})
+          .success(function(data){
+            console.log(data);
+            $scope.comments = data.comments;
+        });
+
         $scope.trustSrc = function(src) {
           return $sce.trustAsResourceUrl(src);
         }
@@ -417,9 +419,16 @@ $urlRouterProvider.otherwise('/tab/home');})
   }
 
     $scope.myuserinfos = myService.getJson();
+    if ($scope.myuserinfos.showcmt) {
+      $scope.showcmtsec = $scope.myuserinfos.showcmt;
+    }else {
+      $scope.showcmtsec = false;
+
+    }
     for (var i = 0; i < data.recipes.length; i++) {
     console.log(  data.recipes[i].id);
-    if ($state.params.id == data.recipes[i].id ) {
+
+    if ($state.params.id == data.recipes[ i].id ) {
         $scope.data = data.recipes[i];
         $http.post("http://samira_food.wcode-agency.com/test_post",(['getsaverecipe',$scope.myuserinfos,$state.params.id]),{headers: {'Content-Type': 'multipart/form-data'}})
           .success(function(data){
@@ -435,14 +444,13 @@ $urlRouterProvider.otherwise('/tab/home');})
             $scope.starsrecipe = data.starsrecipe;
             $scope.disbtn2 = data.disable;
         });
-        $http.post("http://samira_food.wcode-agency.com/test_post",(['getcomments',$state.params.id]),{headers: {'Content-Type': 'multipart/form-data'}})
-          .success(function(data){
-            console.log(data);
-            $scope.comments = data;
-        });
+
 
     }
   }
+
+
+
     console.log(data.recipes);
     $scope.recipes = data.recipes;
   });
@@ -470,44 +478,31 @@ $urlRouterProvider.otherwise('/tab/home');})
       });
     };
 
-    $scope.docomment = function() {
+    $scope.docomment = function(recipe) {
         //console.log($scope.loginData);
     $http.post("http://samira_food.wcode-agency.com/ajax_insert_comment",(['commentapp',$scope.myuserinfos,recipe,$scope.comment]),{headers: {'Content-Type': 'multipart/form-data'}})
       .success(function(data){
         console.log(data);
-        if (data.result == 'loggedin') {
-          window.localStorage.setItem('usertoken',data.result);
-          $scope.showloginlink=false;
-          $scope.showRloginlink=false;
-          $scope.showlogout=true;
-          $scope.user = data.user;
-          $scope.$broadcast('user_data',data.user);
-          console.log($scope.user);
-          $state.go('tab.home');
-          myService.setJson($scope.user);
-        }else{
-          alert('wrong email or password');
-        }
       });
     };
 
 
   }])
 
-  .controller('SearchCtrl', ['$scope', '$http' , '$state', function($scope, $http, $state) {
+.controller('SearchCtrl', ['$scope', '$http' , '$state', function($scope, $http, $state) {
   $http.get('http://samira_food.wcode-agency.com/json_recipes.json')
   .success(function(data){
     $scope.data = data.recipes[$state.params.id];
     $scope.recipes = data.recipes;
-  });
+});
 
-  $http.get('http://samira_food.wcode-agency.com/json_chefs.json')
+$http.get('http://samira_food.wcode-agency.com/json_chefs.json')
   .success(function(data){
     $scope.chefs = data.chefs;
   });
 
 
-  // FILTER BY
+// FILTER BY
 
     $scope.groups = [];
     $scope.btnVal = "" ;
