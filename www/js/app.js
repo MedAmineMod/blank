@@ -422,7 +422,15 @@ $urlRouterProvider.otherwise('/tab/home');})
         $scope.trustSrc = function(src) {
           return $sce.trustAsResourceUrl(src);
         }
-        $scope.movie = {src:""+ data.recipes[i].video_link +"", title:"Egghead.io AngularJS Binding"};
+        if (data.recipes[i].video_link != "https://www.youtube.com/embed/") {
+          $scope.showMovie = true  ;
+          $scope.movie = {src:""+ data.recipes[i].video_link +"", title:"Egghead.io AngularJS Binding"};
+
+        }else {
+          $scope.showMovie =false; 
+        }
+
+
     }
   }
 
