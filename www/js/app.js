@@ -272,7 +272,7 @@ $urlRouterProvider.otherwise('/tab/home');})
 })
 
 .controller('RecetasCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
-    $http.get('http://samira_food.wcode-agency.com/json_recipes.json')
+    $http.get('http://samiratv.wcode-agency.com/json_recipes.json')
   .success(function(data){
     $scope.recipes = data.recipes;
     $scope.data = data.recipes[$state.params.id];
@@ -290,7 +290,7 @@ $urlRouterProvider.otherwise('/tab/home');})
 
 //Category-recipes and categories Controllers :
 .controller('CategoriesCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
-  $http.get('http://samira_food.wcode-agency.com/json_recipes.json')
+  $http.get('http://samiratv.wcode-agency.com/json_recipes.json')
   .success(function(data){
     $scope.recipes = data.recipes;
   });
@@ -299,14 +299,14 @@ $urlRouterProvider.otherwise('/tab/home');})
 
 .controller('CategoryCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
  $scope.params = $state.params ;
-  $http.get('http://samira_food.wcode-agency.com/json_recipes.json')
+  $http.get('http://samiratv.wcode-agency.com/json_recipes.json')
   .success(function(data){
     $scope.recipes = data.recipes;
     $scope.subname = data.recipes.subcategory_name;
     //$scope.data = data.recipes[$state.category];
     });
 
-  $http.get('http://samira_food.wcode-agency.com/json_categories.json')
+  $http.get('http://samiratv.wcode-agency.com/json_categories.json')
   .success(function(data){
     $scope.data = data.categories[$state.params.id];
     $scope.categories = data.categories;
@@ -317,7 +317,7 @@ $urlRouterProvider.otherwise('/tab/home');})
 //***************************************************************************************
 //Videos-recipes  and videos Controllers :
 .controller('VideosCtrl' ,['$scope', '$http', '$state','$sce' ,function($scope, $http, $state ,$sce) {
-  $http.get('http://samira_food.wcode-agency.com/json_Vrecipes.json')
+  $http.get('http://samiratv.wcode-agency.com/json_Vrecipes.json')
   .success(function(data){
     $scope.movie  ;
     $scope.recipes = data.recipes ;
@@ -332,7 +332,7 @@ $urlRouterProvider.otherwise('/tab/home');})
 }] )
 .controller('VideoCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
  $scope.params = $state.params ;
-  $http.get('http://samira_food.wcode-agency.com/json_recipes.json')
+  $http.get('http://samiratv.wcode-agency.com/json_recipes.json')
   .success(function(data){
     $scope.recipes = data.recipes;
     //$scope.data = data.recipes[$state.category];
@@ -348,7 +348,7 @@ $urlRouterProvider.otherwise('/tab/home');})
 
 
 .controller('ChefsCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
-  $http.get('http://samira_food.wcode-agency.com/json_recipes.json')
+  $http.get('http://samiratv.wcode-agency.com/json_recipes.json')
   .success(function(data){
     $scope.recipes = data.recipes;
   });
@@ -357,14 +357,14 @@ $urlRouterProvider.otherwise('/tab/home');})
 
 .controller('ChefCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
   $scope.params = $state.params ;
-  $http.get('http://samira_food.wcode-agency.com/json_recipes.json')
+  $http.get('http://samiratv.wcode-agency.com/json_recipes.json')
   .success(function(data){
     $scope.recipes = data.recipes;
     //$scope.data = data.recipes[$state.chef];
 
     });
 
-    $http.get('http://samira_food.wcode-agency.com/json_chefs.json')
+    $http.get('http://samiratv.wcode-agency.com/json_chefs.json')
   .success(function(data){
     $scope.data = data.chefs[$state.params.id];
     $scope.chefs = data.chefs;
@@ -373,7 +373,7 @@ $urlRouterProvider.otherwise('/tab/home');})
 }])
 /*
 .controller('DetailsCtrl', ['$scope', '$http', '$state' ,  '$sce', function($scope, $http, $state , $sce) {
-  $http.get('http://samira_food.wcode-agency.com/json_recipes.json')
+  $http.get('http://samiratv.wcode-agency.com/json_recipes.json')
   .success(function(data){
 
     for (var i = 0; i < data.recipes.length; i++) {
@@ -393,7 +393,7 @@ $urlRouterProvider.otherwise('/tab/home');})
     //video in detailsComponent
   });
 
-  $http.get('http://samira_food.wcode-agency.com/json_chefs.json')
+  $http.get('http://samiratv.wcode-agency.com/json_chefs.json')
   .success(function(data){
     $scope.chefs = data.chefs;
   });
@@ -404,7 +404,7 @@ $urlRouterProvider.otherwise('/tab/home');})
 .controller('DetailsCtrl', ['$scope', '$http', '$state' ,  '$sce', 'myService' , function($scope, $http, $state , $sce , myService) {
 
 //  .controller('DetailsCtrl', ['$scope', '$http', '$state', 'myService', function($scope, $http, $state, myService) {
-  $http.get('http://samira_food.wcode-agency.com/json_recipes.json')
+  $http.get('http://samiratv.wcode-agency.com/json_recipes.json')
   .success(function(data){
 
   for (var i = 0; i < data.recipes.length; i++) {
@@ -413,7 +413,7 @@ $urlRouterProvider.otherwise('/tab/home');})
     if ($state.params.id == data.recipes[i].id ) {
 
         $scope.data = data.recipes[i];
-        $http.post("http://samira_food.wcode-agency.com/test_post",(['getcomments',data.recipes[i].id]),{headers: {'Content-Type': 'multipart/form-data'}})
+        $http.post("http://samiratv.wcode-agency.com/test_post",(['getcomments',data.recipes[i].id]),{headers: {'Content-Type': 'multipart/form-data'}})
           .success(function(data){
             console.log(data);
             $scope.comments = data.comments;
@@ -427,7 +427,7 @@ $urlRouterProvider.otherwise('/tab/home');})
           $scope.movie = {src:""+ data.recipes[i].video_link +"", title:"Egghead.io AngularJS Binding"};
 
         }else {
-          $scope.showMovie =false; 
+          $scope.showMovie =false;
         }
 
 
@@ -446,14 +446,14 @@ $urlRouterProvider.otherwise('/tab/home');})
 
     if ($state.params.id == data.recipes[ i].id ) {
         $scope.data = data.recipes[i];
-        $http.post("http://samira_food.wcode-agency.com/test_post",(['getsaverecipe',$scope.myuserinfos,$state.params.id]),{headers: {'Content-Type': 'multipart/form-data'}})
+        $http.post("http://samiratv.wcode-agency.com/test_post",(['getsaverecipe',$scope.myuserinfos,$state.params.id]),{headers: {'Content-Type': 'multipart/form-data'}})
           .success(function(data){
             //console.log(data);
             $scope.saveclr = data.clr;
             $scope.starsrecipe = data.starsrecipe;
             $scope.disbtn = data.disable;
         });
-        $http.post("http://samira_food.wcode-agency.com/test_post",(['getfavrecipe',$scope.myuserinfos,$state.params.id]),{headers: {'Content-Type': 'multipart/form-data'}})
+        $http.post("http://samiratv.wcode-agency.com/test_post",(['getfavrecipe',$scope.myuserinfos,$state.params.id]),{headers: {'Content-Type': 'multipart/form-data'}})
           .success(function(data){
             //console.log(data);
             $scope.favclr = data.favclr;
@@ -471,7 +471,7 @@ $urlRouterProvider.otherwise('/tab/home');})
     $scope.recipes = data.recipes;
   });
 
-  $http.get('http://samira_food.wcode-agency.com/json_chefs.json')
+  $http.get('http://samiratv.wcode-agency.com/json_chefs.json')
   .success(function(data){
     $scope.chefs = data.chefs;
   });
@@ -479,7 +479,7 @@ $urlRouterProvider.otherwise('/tab/home');})
   $scope.saveR = function(recipe) {
     //console.log($scope.loginData);
     //console.log(recipe);
-    $http.post("http://samira_food.wcode-agency.com/test_post",(['saverecipe',$scope.myuserinfos,recipe]),{headers: {'Content-Type': 'multipart/form-data'}})
+    $http.post("http://samiratv.wcode-agency.com/test_post",(['saverecipe',$scope.myuserinfos,recipe]),{headers: {'Content-Type': 'multipart/form-data'}})
       .success(function(data){
         console.log(data);
     });
@@ -488,7 +488,7 @@ $urlRouterProvider.otherwise('/tab/home');})
   $scope.favR = function(recipe) {
       //console.log($scope.loginData);
       //console.log(recipe);
-      $http.post("http://samira_food.wcode-agency.com/test_post",(['favrecipe',$scope.myuserinfos,recipe]),{headers: {'Content-Type': 'multipart/form-data'}})
+      $http.post("http://samiratv.wcode-agency.com/test_post",(['favrecipe',$scope.myuserinfos,recipe]),{headers: {'Content-Type': 'multipart/form-data'}})
         .success(function(data){
           console.log(data);
       });
@@ -496,7 +496,7 @@ $urlRouterProvider.otherwise('/tab/home');})
 
     $scope.docomment = function(recipe) {
         //console.log($scope.loginData);
-    $http.post("http://samira_food.wcode-agency.com/ajax_insert_comment",(['commentapp',$scope.myuserinfos,recipe,$scope.comment]),{headers: {'Content-Type': 'multipart/form-data'}})
+    $http.post("http://samiratv.wcode-agency.com/ajax_insert_comment",(['commentapp',$scope.myuserinfos,recipe,$scope.comment]),{headers: {'Content-Type': 'multipart/form-data'}})
       .success(function(data){
         console.log(data);
       });
@@ -506,13 +506,13 @@ $urlRouterProvider.otherwise('/tab/home');})
   }])
 
 .controller('SearchCtrl', ['$scope', '$http' , '$state', function($scope, $http, $state) {
-  $http.get('http://samira_food.wcode-agency.com/json_recipes.json')
+  $http.get('http://samiratv.wcode-agency.com/json_recipes.json')
   .success(function(data){
     $scope.data = data.recipes[$state.params.id];
     $scope.recipes = data.recipes;
 });
 
-$http.get('http://samira_food.wcode-agency.com/json_chefs.json')
+$http.get('http://samiratv.wcode-agency.com/json_chefs.json')
   .success(function(data){
     $scope.chefs = data.chefs;
   });

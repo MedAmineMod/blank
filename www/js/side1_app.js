@@ -9,7 +9,7 @@ angular.module('app.side1_app', ['ionic'])
    // Perform the login action when the user submits the login for
   $scope.doRegister = function() {
     //console.log($scope.loginData);
-    $http.post("http://samira_food.wcode-agency.com/test_login",($scope.registerData),{headers: {'Content-Type': 'multipart/form-data'}})
+    $http.post("http://samiratv.wcode-agency.com/test_login",($scope.registerData),{headers: {'Content-Type': 'multipart/form-data'}})
       .success(function(data){
         console.log(data);
       });
@@ -30,7 +30,7 @@ angular.module('app.side1_app', ['ionic'])
 
   $scope.doLogin = function() {
       //console.log($scope.loginData);
-  $http.post("http://samira_food.wcode-agency.com/test_login",($scope.loginData),{headers: {'Content-Type': 'multipart/form-data'}})
+  $http.post("http://samiratv.wcode-agency.com/test_login",($scope.loginData),{headers: {'Content-Type': 'multipart/form-data'}})
     .success(function(data){
       console.log(data);
       if (data.result == 'loggedin') {
@@ -57,7 +57,7 @@ angular.module('app.side1_app', ['ionic'])
    // Perform the login action when the user submits the login for
   $scope.saveR = function(user,recipe) {
     //console.log($scope.loginData);
-    $http.post("http://samira_food.wcode-agency.com/test_post",($scope.loginData),{headers: {'Content-Type': 'multipart/form-data'}})
+    $http.post("http://samiratv.wcode-agency.com/test_post",($scope.loginData),{headers: {'Content-Type': 'multipart/form-data'}})
       .success(function(data){
         console.log(data);
       });
